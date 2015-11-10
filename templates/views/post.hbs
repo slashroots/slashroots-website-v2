@@ -1,52 +1,17 @@
-<!-- <div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/">&larr; back to the blog</a></p>
-				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</h5>
-				</header>
-				<div class="post">
-					{{{data.post.content.extended}}}
-				</div>
-			</article>
-		</div>
-	</div>
-</div> -->
-
 <div id="hero" style="background-image: url(/images/caribbean_tide_hero.jpg);">
 </div>
 <!------------------Content------------------->
 <div id="content">
 <div class="label label_idea">IDEAS</div>
-<div id="content_title">A Caribbean Open Data Public Service</div>
+<div id="content_title">{{data.post.title}}</div>
 <div id="content_text">
     <div class="written_by" id="matthew">
         <div class="written_by_caption">
             <div class="label label_written_by">Written by:</div>
-            Matthew McNaughton
+            {{data.post.author.name.first}} {{data.post.author.name.last}}
         </div>
     </div>
-    <p>Last month, I had the pleasure of traveling to Trinidad & Tobago to present at the inaugural Caribbean Technology Innovation & Digital Economy Conference, or Caribbean TIDE for short. The Conference was organized by the Trinidadian government in collaboration with the World Bank, and brought together startups, civil society and public sector innovators from across the Caribbean with international practitioners to discuss innovation in the digital economy and progress being made by the Caribbean to benefit.</p>
-    <p>The result was a three-day conference that explored a variety of topics ranging from satellite technologies and policies for facilitating Broadband access and last-mile connectivity, structured processes for catalyzing and incubating sector specific startups, to reflections from the growing Open Data movement in the Caribbean and champions for a more citizen-centred public sector. It was the last two that I most excited and impressed by.</p>
-    <p class="content_subtitle">A Growing Caribbean Open Data Community</p>
-    <p>While academia and civil society in the Caribbean have been <a href="http://blogs.iadb.org/abierto-al-publico/2014/09/04/caribbean-embraces-open-data/">long time supporters and advocates</a> of Open Government Data in the Caribbean, at Caribbean TIDE it was great to see Governments leading the discussion. There were a number of panels with government representatives discussing the value of and plans for opening up data, including a <a href="https://drive.google.com/a/slashroots.org/folderview?id=0B_4Pr8esNBKbfnlnUnd2QThYUDRnc09BMWdGMHdjY1FTZW9PQ2NUZDNVTEluazU5LUpWRkE&usp=drive_web">regional panel</a> of implementers discussing their current experiences and lessons learned. </p>
-    <p>In fact, the region now boasts official Government Open Data portals in the <a href="http://datos.gob.do/">Dominican Republic</a>, <a href="http://data.govt.lc/">St. Lucia</a>, <a href="https://data.pr.gov/en/">Puerto Rico</a>, and <a href="http://data.gov.tt/">Trinidad & Tobago</a>, with Jamaica's portal currently under development. These are complemented by the work of <a href="http://statinja.gov.jm/Default.aspx">Statistical Institute Of Jamaica</a>, the University of The West Indies, St Augustine Campus's <a href="http://data.tt/">open data</a> and <a href="http://maps.tt/">open GIS</a> portals, and the Caribbean Open Institute <a href="http://opencaribbean.org/">Regional Open Data</a> Portal. Although the portals may vary in maturity and breadth of data publication, this proliferation of open data publishers across the regions is indicative that open data is truly here in the Caribbean.</p>
-    <p>The conversation about the role of Open Data in the Caribbean has also evolved beyond simply publishing data. A workshop on <a href="https://drive.google.com/a/slashroots.org/file/d/0B_4Pr8esNBKbTzBmMzdiVWtfRWc/view">Regional Technical Standards for Open Data</a> data led by Jean Barroca and Andrew Stott, pointed the way for how the open data discourse was evolving and ways that reflected maturity and engagement around how open data could be further localized for the Caribbean context. After introducing <a href="http://www.citysdk.eu/">CitySDK</a> and <a href="http://www.citadelonthemove.eu/">CitadelOntheMove</a>, data standard projects being implemented across European Cities to facilitate scale and replicability of innovations, participants discussed how similar work in the Caribbean could support the scaling innovations from one island to another.</p>
-    <p>Participants identified agriculture, tourism, and disaster response and preparedness as thematic sectors that would be strong first candidates for exploring data standardization that were relevant to the Caribbean context. This discussion is still early, but it is an exciting one. It complements the work we have been doing in the agriculture sector and we look forward to contributing to its progress.</p>
-    <p class="content_subtitle">Digital Services and a Citizen-Centric Public Sector</p>
-    <p>The other take away from the conference that I was excited to see was an evolving narrative around the need for a different approach to the design and delivery of public services. After decades of low success rates for large IT project in both the public sector globally, with the Obama Administrations HealthCare.Gov launch being one of the most high profile missteps, IT in Government Service Delivery is experiencing a renaissance globally. A movement led by teams such as the UK Digital Services and the US Government's US Digital Services and 18f organizations, are seeking to bring more open, iterative and citizen-centred approaches into the core of government.</p>
-    <p>I'm happy that the Caribbean is not being left behind in this trend. I was invited to TIDE to present on the <a href="http://digitalprinciples.org/">Digital Development Principles</a>, a collection of "living guidelines on the best practices for creating technology-enabled programmes and services. The principles are being adopted by organizations such as UNICEF, USAID and the Bill and Melinda Gates Foundation and include guidelines such as  "designing with the user, "understanding the ecosystem, "being data-driven, all of which are aimed at combatting the abundance of failed projects within the ICT4D space. At SlashRoots, these principles are the core of how we do our work and have helped contribute to their development as well as used them to help our partners be more effective. I was very humbled and excited by the principles strong resonance among many at the conference as well as learning about other teams within government agencies who share the values.</p>
-    <p>In fact, the work of two teams in particular stood out--Jose Luis Liranzo at the Presidential Office for Information Communication Technologies (OPTIC) in Dominican Republic,  and Colleen Gallazzi and Amrika Ramjewan from the Ministry of Public Affairs' <a href="http://www.mpa.gov.tt/diamond/">Diamond Division</a> in Trinidad & Tobago.</p>
-    <p>I met Jose Luise in 2012 through his involvement in Dominican Republic's Open Government Initiative. At TIDE he presented on his team's progress with Open Data as well as on an initiative for driving improvements to the Dominican Government's Digital Services. In addition to a variety of eGovernment initiatives, they have created a framework for assessing public sector institutions on their digital and online government services. They publish the assessment online as a ranking of government services. Jose Luis shared that this ranking has helped accelerate engagement with his team and they are now working with many agencies to improve their use of technology with the citizen in mind.</p>
-    <p>Similarly in Trinidad, the Diamond Division team have created a "Diamond Standard Certification Programme "to improve to improve national competitiveness and ease of doing business through enhanced citizen-centric service delivery by Government Ministries, Departments and Agencies that provide services directly to the public. An initiative of the broader Public Sector Modernization effort, the Diamond Division team work alongside partner public sector entities to evaluate, streamline and monitor the service delivery experience for the citizenry. The agencies successful in completing the programme are assign the "Diamond Standard Certificate.</p>
-    <p>The most effective teams are seeking to be more open, iterative and more collaborative in the way they design their services. I'm happy that the Caribbean is not being left behind in this trend, and I look forward to more agencies adopting similar approaches in their own work.</p>
-    <p>Ultimately, the Caribbean TIDE Conference was a successful event and a great experience. The Caribbean still has a lot more work to do if we are to ensure that the experience of every citizen is one of dignity, effective and pleasurable experience. But the region has its champions, and we're glad to count ourselves among them.</p>
+    {{{data.post.content.extended}}}     
 </div>
 <div class="clear"></div>
 </div>

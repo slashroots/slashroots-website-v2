@@ -19,7 +19,9 @@ exports = module.exports = function(req, res) {
 				 .where('group', 'group-one')
 				 .sort('position')
 				 .populate('categories')
+				 .populate('author', 'name')
 				 .exec(function(err, group_one_posts){
+				 	console.log(group_one_posts);
 				 	locals.posts.group_one_posts = group_one_posts;
 				 	next();
 				 });
@@ -31,6 +33,7 @@ exports = module.exports = function(req, res) {
 				 .where('group', 'group-two')
 				 .sort('position')
 				 .populate('categories')
+				 .populate('author', 'name')
 				 .exec(function(err, group_two_posts){
 				 	locals.posts.group_two_posts = group_two_posts;
 				 	next();
@@ -44,7 +47,6 @@ exports = module.exports = function(req, res) {
 				 .sort('position')
 				 .populate('categories')
 				 .exec(function(err, blog_articles){
-				 	//console.log(blog_articles);
 				 	locals.posts.blog_articles = blog_articles;
 				 	next();
 				 });
