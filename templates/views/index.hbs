@@ -2,19 +2,19 @@
 		<div id="container">
             <!-------------------Header------------------->
             <div id="header">
-                <div id="logo"></div>
+                <a href="/"><div id="logo"></div></a>
                 <div id="menu">
                     <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
+                        <li><a href="/keystone/signin">Signin</a></li>
+                        <!-- <li>Item 2</li>
                         <li>Item 3</li>
-                        <li>Item 4</li>
+                        <li>Item 4</li> -->
                     </ul>
                 </div>
             </div>
             <!--------------------Hero-------------------->
             <a href="/post/{{posts.carousel.[0].slug}}">
-            <div id="hero" style="background-image: url(/images/caribbean_tide_hero.jpg);">
+            <div id="hero" style="background-image: url({{posts.carousel.[0].image.url}});">
                 <div>
                     <div class="label label_idea">IDEAS</div>
                     {{posts.carousel.[0].title}}
@@ -26,11 +26,11 @@
                 <!-----------------Group1----------------->
                 <div class="group" id="group_1">
                     <div class="colx1">
-                        <a href="about.html">
+                        <a href="/about">
                             <div class="small_box box_top" id="box1">
                                 <div>
                                     <div class="label label_idea">IDEAS</div>
-                                    {{posts.group_one_posts.[0].title}}
+                                    Who We Are
                                 </div>
                             </div>
                         </a>

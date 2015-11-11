@@ -1,6 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').load();
+//require('dotenv').load();
 
 // Require keystone
 var keystone = require('keystone');
@@ -32,8 +32,14 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User'
-
+	'user model': 'User',
+	//Application Configuration
+	'mongo': process.env.MONGO_URI,
+	'cookie secret' : process.env.COOKIE_SECRET,
+	'cloudinary config' : process.env.CLOUDINARY_URL,
+	//Wysiwyg Configuration
+	'wysiwyg cloudinary images' : true,
+	'wysiwyg additional plugins': 'wordcount'
 });
 
 // Load your project's Models
@@ -60,7 +66,6 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
 	'galleries': 'galleries',
-	'enquiries': 'enquiries',
 	'users': 'users'
 });
 

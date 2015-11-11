@@ -21,7 +21,6 @@ exports = module.exports = function(req, res) {
 				 .populate('categories')
 				 .populate('author', 'name')
 				 .exec(function(err, group_one_posts){
-				 	console.log(group_one_posts);
 				 	locals.posts.group_one_posts = group_one_posts;
 				 	next();
 				 });
@@ -58,6 +57,7 @@ exports = module.exports = function(req, res) {
 				 .where('group', 'carousel')
 				 .populate('categories')
 				 .exec(function(err, carousel){
+				 	console.log(carousel);
 				 	locals.posts.carousel = carousel;
 				 	next();
 				 });
