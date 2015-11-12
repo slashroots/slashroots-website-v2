@@ -57,7 +57,6 @@ exports = module.exports = function(req, res) {
 				 .where('group', 'carousel')
 				 .populate('categories')
 				 .exec(function(err, carousel){
-				 	console.log(carousel);
 				 	locals.posts.carousel = carousel;
 				 	next();
 				 });

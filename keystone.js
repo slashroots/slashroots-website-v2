@@ -34,7 +34,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	//Application Configuration
-	'mongo': process.env.MONGOLAB_URI || 'mongodb://localhost/slashroots-foundation',
+	'mongo': process.env.MONGOLAB_URI,
 	'cookie secret' : process.env.COOKIE_SECRET,
 	'cloudinary config' : process.env.CLOUDINARY_URL,
 	//Wysiwyg Configuration

@@ -13,14 +13,41 @@
                 </div>
             </div>
             <!--------------------Hero-------------------->
-            <a href="/post/{{posts.carousel.[0].slug}}">
-            <div id="hero" style="background-image: url({{posts.carousel.[0].image.url}});">
-                <div>
-                    <div class="label label_idea">IDEAS</div>
-                    {{posts.carousel.[0].title}}
+            <div class="carousel">
+
+                <div class="carousel-item">
+                    <a href="/about">
+                    <div id="hero" style="background-image: url({{posts.carousel.[0].image.url}});">
+                        <div>
+                            <div class="label label_idea">IDEAS</div>
+                            {{posts.carousel.[0].title}}
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="/post/{{posts.carousel.[1].slug}}">
+                    <div id="hero" style="background-image: url({{posts.carousel.[1].image.url}});">
+                        <div>
+                            <div class="label label_idea">IDEAS</div>
+                            {{posts.carousel.[1].title}}
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="/post/{{posts.carousel.[2].slug}}">
+                    <div id="hero" style="background-image: url({{posts.carousel.[2].image.url}});">
+                        <div>
+                            <div class="label label_idea">IDEAS</div>
+                            {{posts.carousel.[2].title}}
+                        </div>
+                    </div>
+                    </a>
                 </div>
             </div>
-            </a>
             <!--------------------Grid-------------------->
             <div id="grid">
                 <!-----------------Group1----------------->
