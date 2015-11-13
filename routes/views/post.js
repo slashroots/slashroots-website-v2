@@ -16,17 +16,21 @@ exports = module.exports = function(req, res) {
 	
 	// Load the current post
 	view.on('init', function(next) {
-		
-		var q = keystone.list('Post').model.findOne({
+		if(locals.filters.post === "a-community-for-doers-makers-and-innovators-sharing-knowledge-and-making-a-difference-in-the-caribbean"){
+			res.url('https://groups.google.com/forum/#!forum/slashroots');
+		}else if(locals.filters.post === "we-are-the-slashroots-foundation"){
+			res.url('/about');
+		}else{
+			var q = keystone.list('Post').model.findOne({
 			state: 'published',
 			slug: locals.filters.post
-		}).populate('author', 'name').populate('categories');
-		
-		q.exec(function(err, post) {
-			locals.data.post = post;
-			next(err);
-		});
-		
+			}).populate('author', 'name').populate('categories');
+			
+			q.exec(function(err, post) {
+				locals.data.post = post;
+				next(err);
+			});
+		}		
 	});
 	
 	// Load other posts

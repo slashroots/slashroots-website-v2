@@ -17,7 +17,10 @@ var cloudinaryUrlLimit = _.template(CLOUDINARY_HOST + '/<%= cloudinaryUser %>/im
 
 module.exports = function() {
 	
-	var _helpers = {};
+	var _helpers = {},
+		dateFormats = {
+			short_date: "D.MM.YY"
+		};
 	
 	/**
 	 * Generic HBS Helpers
@@ -348,6 +351,15 @@ module.exports = function() {
 	_helpers.underscoreFormat = function (obj, underscoreMethod) {
 		return obj._[underscoreMethod].format();
 	}
+
+	/**
+	 * 
+	 */
+	
+	_helpers.formatShortDate = function(datetime, format){
+		format = dateFormats[format] || format;
+		return moment(datetime).format(format);
+	};
 	
 	return _helpers;
 };

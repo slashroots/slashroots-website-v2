@@ -122,34 +122,30 @@
                         </div>
                         <div class="news_text_box" id="news_text_box1">
                             <div>
-                            {{{content.brief}}}
-                                <!-- 20.08.15<br>
-                                On Tuesday August 25th, Matthew McNaughton will be presenting on the "Principles for Digital Development" at the Caribbean Technology Innovation and Digital Economy (TIDE) Conference in Port of Spain, Trinidad & Tobago. The Principles are "living" guidelines on the best practices for creating technology-enabled programmes. You can see Matthew's presentation here and learn about the Principles on its <a href="http://digitalprinciples.org/">website</a>.
-                                <br><br><br> -->
+                                {{formatShortDate publishedDate "short_date"}}
+                                {{{content.brief}}}
                             </div>
                         </div>
                     </div>
                     {{/each}}
-
+                    {{#each data.events}}
                          <div class="colx3">
                             <div class="small_box" id="news_box1" 
-                            style="background-image: url({{data.events.[0].image.secure_url}});">
+                            style="background-image: url({{image.secure_url}});">
                                 <div>
                                     <div class="label label_news">EVENT</div>
-                                    {{data.events.[0].title}}
+                                    {{title}}
                                 </div>
                             </div>
                             <div class="news_text_box" id="news_text_box1">
                                 <div>
-                                {{{data.events.[0].content.brief}}}
-                                    <!-- 20.08.15<br>
-                                    On Tuesday August 25th, Matthew McNaughton will be presenting on the "Principles for Digital Development" at the Caribbean Technology Innovation and Digital Economy (TIDE) Conference in Port of Spain, Trinidad & Tobago. The Principles are "living" guidelines on the best practices for creating technology-enabled programmes. You can see Matthew's presentation here and learn about the Principles on its <a href="http://digitalprinciples.org/">website</a>.
-                                    <br><br><br> -->
+                                    {{formatShortDate publishedDatee "short_date"}}
+                                    {{{content.brief}}}                                  
                                 </div>
                             </div>
-                        </div>
-                   
-                      </div>                      
+                        </div>                   
+                      </div>
+                      {{/each}}                   
                         <div style="clear:both; width:0px; height:0px;"></div>
                     </div>
                 </div>

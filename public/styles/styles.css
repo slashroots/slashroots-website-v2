@@ -20,7 +20,9 @@ body {
     height: auto;
     display: inline-block;
 }
-
+.pub_date{
+    margin-top: 0px;
+}
 /*----------------------- Header ---------------------*/
 #header {
     width: 100%;
