@@ -17,7 +17,7 @@ exports = module.exports = function(req, res) {
 	// Load the current post
 	view.on('init', function(next) {
 		if(locals.filters.post === "a-community-for-doers-makers-and-innovators-sharing-knowledge-and-making-a-difference-in-the-caribbean"){
-			res.url('https://groups.google.com/forum/#!forum/slashroots');
+			res.redirect('https://groups.google.com/forum/#!forum/slashroots');
 		}else if(locals.filters.post === "we-are-the-slashroots-foundation"){
 			res.url('/about');
 		}else{
