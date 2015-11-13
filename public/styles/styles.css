@@ -312,17 +312,17 @@ p > a {
 
 /*-------------------- News Boxes --------------------*/
 #news_box1 {
-    background-image: url(/images/caribbean-tide.jpg);
+    /*background-image: url(/images/caribbean-tide.jpg);*/
     background-size: cover;
 }
 #news_box2 {
-    background-image: url(/images/ogpsummit.jpg);
+    /*background-image: url(/images/ogpsummit.jpg);*/
     background-size: cover;
 }
 #news_box3 {
-    background-image: url(/images/ben.jpg);
+    /*background-image: url(/images/ben.jpg);*/
     background-size: cover;
-    background-position: center;
+    /*background-position: center;*/
 }
 #news_text_box1 {
 
@@ -559,7 +559,7 @@ body {
     width: 49%;
     float: left;
 }
-#group_3 > .colx1 {
+#group_3 > .colx1, .colx2, .colx3 {
     width: 48.65%;
     height: auto;
     float: left;
@@ -570,25 +570,25 @@ body {
     margin: 0px;
 }
 #group_3 > .colx2 {
-    width: 48.65%;
+   /* width: 48.65%;
     height: auto;
     float: right;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: #898989;
     bottom: 0px;
-    margin: 0px;
+    margin: 0px;*/
 }
 #group_3 > .colx3 {
-    width: 100%;
+    /*width: 100%;
     height: auto;
-  /*float: left;*/
+    float: left;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: #898989;
     margin-top: 2%;
     margin-bottom: 10%;
-    bottom: 0px;
+    bottom: 0px;*/
 }
 /*----------------------------------------------------*/
 

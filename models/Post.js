@@ -23,7 +23,8 @@ Post.add({
 	},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 	group: {type: Types.Select, options: 'group-one, group-two, blog-articles, carousel'},
-	position : {type: Types.Select, options: 'a, b, large, first, second, third', default: 'a', index: true}
+	position : {type: Types.Select, options: 'a, b, large, first, second, third', default: 'a', index: true},
+	video: {type: Types.Url}
 });
 
 Post.schema.virtual('content.full').get(function() {

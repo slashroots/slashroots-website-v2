@@ -6,12 +6,18 @@ exports = module.exports = function(req, res) {
 	
 	var view = new keystone.View(req, res),
 		locals = res.locals,
-		Post = keystone.list('Post');
+		Post = keystone.list('Post'),
+		News = keystone.list('News'),
+		Event = keystone.list('Event');
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
 	locals.posts = {};
+	locals.data = {
+		news : [],
+		events: []
+	};
 
 	view.on('init', function(next){
 		Post.model.find()
@@ -61,7 +67,32 @@ exports = module.exports = function(req, res) {
 				 	next();
 				 });
 	});
-
+	/**
+	 * Get the two most recent news items
+	 */
+	 view.on('init', function(next){
+	 	News.model.find()
+	 			  .where('state', 'published')
+	 			  .sort('-publishedDate')
+	 			  .limit(2)
+	 			  .exec(function(err, news_items){
+	 			  	locals.data.news = news_items;
+	 			  	next();
+	 			  });
+	 });
+	/**
+	 * Get the currently published event
+	 */
+	view.on('init', function(next){
+		Event.model.find()
+				  .where('state', 'published')
+				  .sort('-publishedDate')
+				  .limit(1)
+				  .exec(function(err, events){
+				  	locals.data.events = events
+				  	next();
+				  });
+	});
 	// Render the view
 	view.render('index');
 	

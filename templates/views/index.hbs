@@ -61,21 +61,21 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="devca.html">
+                        <a href="/devca">
                             <div class="small_box" id="box2">
                                 <div>
                                     <div class="label label_initiative">INITIATIVE</div>
-                                    {{posts.group_one_posts.[1].title}}
+                                    Developing the Caribbean 2015 Dates Announced
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="colx2">
-                        <a href="cftc.html">
+                        <a href="/post/{{posts.group_one_posts.[0].slug}}">
                             <div class="large_box" id="box3">
                                 <div>
                                     <div class="label label_initiative">INITIATIVE</div>
-                                    {{posts.group_one_posts.[2].title}}
+                                    {{posts.group_one_posts.[0].title}}
                                 </div>
                             </div>
                         </a>
@@ -111,63 +111,45 @@
                 </div>
                 <!-----------------Group3----------------->
                 <div class="group" id="group_3">
+                    {{# each data.news}}
                     <div class="colx1">
-                        <div class="small_box" id="news_box1">
+                        <div class="small_box" id="news_box1" 
+                        style="background-image: url({{image.secure_url}});">
                             <div>
                                 <div class="label label_news">NEWS</div>
-                                {{posts.blog_articles.[0].title}}
+                                {{title}}
                             </div>
                         </div>
                         <div class="news_text_box" id="news_text_box1">
                             <div>
-                            {{posts.blog_articles.[0].content.brief}}
+                            {{{content.brief}}}
                                 <!-- 20.08.15<br>
                                 On Tuesday August 25th, Matthew McNaughton will be presenting on the "Principles for Digital Development" at the Caribbean Technology Innovation and Digital Economy (TIDE) Conference in Port of Spain, Trinidad & Tobago. The Principles are "living" guidelines on the best practices for creating technology-enabled programmes. You can see Matthew's presentation here and learn about the Principles on its <a href="http://digitalprinciples.org/">website</a>.
                                 <br><br><br> -->
                             </div>
                         </div>
                     </div>
-                    <div class="colx2">
-                        <div class="small_box" id="news_box2">
-                            <div>
-                                <div class="label label_news">NEWS</div>
-                                {{posts.blog_articles.[1].title}}
+                    {{/each}}
+
+                         <div class="colx3">
+                            <div class="small_box" id="news_box1" 
+                            style="background-image: url({{data.events.[0].image.secure_url}});">
+                                <div>
+                                    <div class="label label_news">EVENT</div>
+                                    {{data.events.[0].title}}
+                                </div>
+                            </div>
+                            <div class="news_text_box" id="news_text_box1">
+                                <div>
+                                {{{data.events.[0].content.brief}}}
+                                    <!-- 20.08.15<br>
+                                    On Tuesday August 25th, Matthew McNaughton will be presenting on the "Principles for Digital Development" at the Caribbean Technology Innovation and Digital Economy (TIDE) Conference in Port of Spain, Trinidad & Tobago. The Principles are "living" guidelines on the best practices for creating technology-enabled programmes. You can see Matthew's presentation here and learn about the Principles on its <a href="http://digitalprinciples.org/">website</a>.
+                                    <br><br><br> -->
+                                </div>
                             </div>
                         </div>
-                        <div class="news_text_box" id="news_text_box2">
-                            <div>
-                            {{posts.blog_articles.[1].content.brief}}
-                               <!-- 27.10.15<br>
-                                At the Open Government Partnership Summit in Mexico City
-                                from October 27-29 Matthew McNaughton will be presenting
-                                 on how SlashRoots have been making the recently adopted Sustainable
-                                 Development Goals real at the local level. Matthew will be
-                                 participating in the Code For All panel on "Harnessing the Capacity
-                                 of the Community for Sustainable Open Government".
-                                Follow OGP discussion Twitter using #OGP15. -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="colx3">
-                      <div class="small_box" id="news_box3">
-                          <div>
-                              <div class="label label_event">EVENT</div>
-                              {{posts.blog_articles.[2].title}}
-                          </div>
-                      </div>
-                      <div class="news_text_box" id="news_text_box3">
-                          <div>
-                          {{posts.blog_articles.[2].content.brief}}
-                          <!-- 28.10.15<br>
-                          The next workshop in the StartupJAM entrepreneurial series will take place
-                          on <strong>Wednesday, October 28, 2015</strong>
-                          under the theme "How to build an airtight product strategy"
-                          The guest speaker for the workshop is Ben Cole, Product Manager at Kickstarter.
-                          Ben Cole is a leader who cares deeply about the social impact of technology.
-                          He is currently a product manager at Kickstarter, advisor to the Clinton
-                          campaign, and product management instructor at General Assembly. -->
-                          </div>
-                      </div>
+                   
+                      </div>                      
                         <div style="clear:both; width:0px; height:0px;"></div>
                     </div>
                 </div>
