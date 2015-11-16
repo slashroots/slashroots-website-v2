@@ -324,7 +324,7 @@ p > a {
 #news_box3 {
     /*background-image: url(/images/ben.jpg);*/
     background-size: cover;
-    /*background-position: center;*/
+    background-position: center;
 }
 #news_text_box1 {
 
