@@ -23,6 +23,10 @@ body {
 .pub_date{
     margin-top: 0px;
 }
+
+.news_content > p{
+    margin-top: 0px;
+}
 /*----------------------- Header ---------------------*/
 #header {
     width: 100%;
