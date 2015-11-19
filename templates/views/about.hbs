@@ -1,14 +1,13 @@
 <div id="header">
-    <a href="/"><div id="logo"></div></a>
-    <div id="menu">
-        <ul>
-            <li><a href="/keystone/signin">Signin</a></li>
-            <!-- <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li> -->
-        </ul>
-    </div>
-</div>
+                <a href="/"><div id="logo"></div></a>
+                <div id="menu">
+                    <ul>
+                        {{# each data.menu}}
+                        <li><a href="/{{link}}">{{label}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
 <div id="hero" style="background-image: url(/images/post_its.jpg);">
     </div>
     <!------------------Content------------------->
