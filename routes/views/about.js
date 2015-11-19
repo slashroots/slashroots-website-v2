@@ -10,7 +10,7 @@
 				menu: []
 			};
 		query.exec(function(err, menu){
-			if(err || !menu){
+			if(err){
 				locals.data.menu = common.getStaticMenu();
 			}else{
 				locals.data.menu = menu;

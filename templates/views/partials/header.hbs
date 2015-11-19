@@ -1,11 +1,10 @@
 <div id="header">
-    <div id="logo"></div>
+    <a href="/"><div id="logo"></div></a>
     <div id="menu">
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
+            {{# each data.menu}}
+            <li><a href="/{{link}}">{{label}}</a></li>
+            {{/each}}
         </ul>
     </div>
 </div>

@@ -1,15 +1,26 @@
 (function(){
-	var keystone = require('keystone');
+	var keystone = require('keystone'),
+		common = require('../../routes/common/common');
 
 exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res),
 		Post = keystone.list('Post'),
 		User = keystone.list('User'),
+		author = getAuthorNameFromUrl(req),
+		query = common.getMenu(),
 		locals = res.locals;
-	locals.data = {
-		posts: []
-	};
-	var author = getAuthorNameFromUrl(req);
+		locals.data = {
+			posts: [],
+			menu: []
+		};
+	
+		query.exec(function(err, menu){
+				if(err || !menu){
+					locals.data.menu = common.getStaticMenu();
+				}else{
+					locals.data.menu = menu;
+				}
+		});
 	/**
 	 * getAuthorNameFromUrl Parse the url of the request to get the author's name.
 	 * @param  {[type]} req 
@@ -30,7 +41,6 @@ exports = module.exports = function(req, res) {
 					.where('author', user[0]._id)
 					.populate('author', 'name')
 					.limit(3)
-					.skip(1)
 					.exec(function(err, posts) {
 							locals.data.posts = posts;
 							next(err);

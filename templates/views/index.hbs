@@ -1,16 +1,7 @@
 {{!< default}}
 		<div id="container">
             <!-------------------Header------------------->
-            <div id="header">
-                <a href="/"><div id="logo"></div></a>
-                <div id="menu">
-                    <ul>
-                        {{# each data.menu}}
-                        <li><a href="/{{link}}">{{label}}</a></li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
+            {{> header}}
             <!--------------------Hero-------------------->
             <div class="carousel">
 
