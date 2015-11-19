@@ -42,7 +42,7 @@ body {
     float: right;
     margin-top: 2%;
     margin-right: 3%;
-    display: none;
+   /* display: none;*/
 }
 #menu ul {
     list-style-type: none;

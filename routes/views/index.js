@@ -8,7 +8,8 @@ exports = module.exports = function(req, res) {
 		locals = res.locals,
 		Post = keystone.list('Post'),
 		News = keystone.list('News'),
-		Event = keystone.list('Event');
+		Event = keystone.list('Event'),
+		Menu = keystone.list('Menu');
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
@@ -16,7 +17,8 @@ exports = module.exports = function(req, res) {
 	locals.posts = {};
 	locals.data = {
 		news : [],
-		events: []
+		events: [],
+		menu: []
 	};
 
 	view.on('init', function(next){
@@ -92,6 +94,18 @@ exports = module.exports = function(req, res) {
 				  	locals.data.events = events
 				  	next();
 				  });
+	});
+	/**
+	 * Get all menu items
+	 */
+	view.on('init', function(next){
+		Menu.model.find()
+				 .where('state', 'published')
+				 .sort('-order')
+				 .exec(function(err, menu){
+				 	locals.data.menu = menu;
+				 	next();
+				 });
 	});
 	// Render the view
 	view.render('index');
