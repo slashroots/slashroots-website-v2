@@ -25,7 +25,8 @@
             <div class="written_by_caption">
               <div class="label label_written_by">Written by:</div>
                     {{data.post.author.name.first}} {{data.post.author.name.last}}
-            </div>
+                    <a class="view-more" href="/author/{{data.post.author.name.first}}-{{data.post.author.name.last}}">View more posts by {{data.post.author.name.first}} {{data.post.author.name.last}}</a> 
+            </div>                          
         </div>
     {{/if}}
     {{{data.post.content.extended}}}    
