@@ -29,9 +29,8 @@ exports = module.exports = function(req, res) {
 					.find()
 					.where('author', user[0]._id)
 					.populate('author', 'name')
-					.limit(3)
-					.skip(1)
 					.exec(function(err, posts) {
+							//console.log(posts);
 							locals.data.posts = posts;
 							next(err);
 					});					

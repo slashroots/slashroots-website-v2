@@ -12,6 +12,8 @@
 					.find()
 					.where('author', user[0]._id)
 					.populate('author', 'name')
+					.limit(req.query.limit)
+					.skip(req.query.skip)
 					.exec(function(err, posts) {
 							res.send(posts);
 					}); 

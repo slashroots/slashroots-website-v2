@@ -12,25 +12,33 @@ $( document ).ready(function() {
     $('#more').click(function(){
     	//get the next three posts
     	//append the posts to the exiting posts
-    	$.ajax({
-    		url: '/posts',
+    	var skip = 3, limit = 3;
+        $.ajax({
+    		url: '/posts?skip=' + skip + '&limit=' + limit,
     		data: {format: 'json'},
     		type: 'GET',
     		success: function(data){
-                var length = data.length,
+                  if(data.length > 0){
+                    var length = data.length,
                      i = 0,
-                     $clear = $('<div>').css({'clear':'both','width':'0px', 'height' : '0px'});     
-                for(;i<length;i++){
-                    $('#group_3').append(createPost(data[i], i)); 
-                    $('#group_3').append($clear); 
-                }                      			
+                     $clear = $('<div>').css({'clear':'both','width':'0px', 'height' : '0px'});  
+                     for(;i<length;i++){
+                        $('#group_3').append(createPost(data[i], i)); 
+                        $('#group_3').append($clear); 
+                    }
+                }                                     			
     		},
     		error: function(){
     			console.log('Error');
     			$('#group_3').html('<p>An error has occurred</p>');
     		}
     	});
-    
+        /**
+         * [createPost description]
+         * @param  {[type]} post [description]
+         * @param  {[type]} i    [description]
+         * @return {[type]}      [description]
+         */
         var createPost = function(post, i){
             i++;
             var col = 'colx'+ i;

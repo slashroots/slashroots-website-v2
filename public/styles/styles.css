@@ -193,6 +193,24 @@ p > a {
     line-height: 110%;
     text-decoration: none;
 }
+
+.author{
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.author > h2{
+    margin-top:0px;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 12px;
+
+}
+.author > h4{
+    margin-bottom: 0px;
+    font-weight: 300;
+    font-family: 'Roboto Slab', serif;
+}
 /*----------------------------------------------------*/
 
 /*----------------------- Grid -----------------------*/
