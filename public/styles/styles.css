@@ -193,6 +193,34 @@ p > a {
     line-height: 110%;
     text-decoration: none;
 }
+
+.author{
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.author > h2{
+    margin-top:0px;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 12px;
+
+}
+.author > h4{
+    margin-bottom: 0px;
+    font-weight: 300;
+    font-family: 'Roboto Slab', serif;
+}
+
+.related-posts{
+    margin-left: 26px;
+}
+
+.related-posts > h2{
+    font-weight: bold;
+    color: #458E9E;
+    font-family: 'Roboto Slab', serif;
+}
 /*----------------------------------------------------*/
 
 /*----------------------- Grid -----------------------*/
@@ -211,6 +239,16 @@ p > a {
     margin-top: 2%;
     display: inline-block;
 }
+
+.card-wrapper{
+    width: 96%;
+    height: auto;
+    margin-left: 0%;
+    margin-right: 2%;
+    margin-top: 0%;
+    display: inline-block;
+}
+
 #group_1 > .colx1 {
     width: 32%;
     height: auto;

@@ -360,6 +360,10 @@ module.exports = function() {
 		format = dateFormats[format] || format;
 		return moment(datetime).format(format);
 	};
+
+	_helpers.inc = function(value){
+		return parseInt(value) + 1;
+	};
 	
 	return _helpers;
 };
