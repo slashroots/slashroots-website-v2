@@ -30,7 +30,6 @@ exports = module.exports = function(req, res) {
 					.where('author', user[0]._id)
 					.populate('author', 'name')
 					.exec(function(err, posts) {
-							//console.log(posts);
 							locals.data.posts = posts;
 							next(err);
 					});					

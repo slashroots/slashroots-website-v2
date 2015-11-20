@@ -1,14 +1,4 @@
-<div id="header">
-    <a href="/"><div id="logo"></div></a>
-    <div id="menu">
-        <ul>
-            <li><a href="/keystone/signin">Signin</a></li>
-            <!-- <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li> -->
-        </ul>
-    </div>
-</div>
+{{>header}}
 <div id="hero" style="background-image: url({{data.post.image.url}});">
 </div>
 <!------------------Content------------------->
@@ -30,6 +20,10 @@
         </div>
     {{/if}}
     {{{data.post.content.extended}}}    
+</div>
+<div class="related-posts">
+    <h2>Related Projects & Ideas</h2>
+    {{> cards}}
 </div>
 <div class="clear"></div>
 </div>

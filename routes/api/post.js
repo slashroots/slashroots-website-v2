@@ -2,7 +2,12 @@
 	var keystone = require('keystone'),
 		Post = keystone.list('Post'),
 		User = keystone.list('User');
-
+	/**
+	 * [index description]
+	 * @param  {[type]} req [description]
+	 * @param  {[type]} res [description]
+	 * @return {[type]}     [description]
+	 */
 	exports.index = function(req, res){
 		User.model.find()
 			.where('name.first','Matthew')
