@@ -197,11 +197,13 @@ p > a {
 .author{
     margin-left: 20px;
     text-transform: uppercase;
+    color: #458E9E;
 }
 
 .author > h2{
     margin-top:0px;
     font-weight: bold;
+    color: #458E9E;
     font-family: 'Roboto Slab', serif;
     margin-bottom: 12px;
 
