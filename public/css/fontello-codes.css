@@ -1,0 +1,10 @@
+
+.icon-facebook:before { content: '\e800'; } /* '' */
+.icon-facebook-rect:before { content: '\e801'; } /* '' */
+.icon-twitter:before { content: '\e802'; } /* '' */
+.icon-twitter-bird:before { content: '\e803'; } /* '' */
+.icon-github-text:before { content: '\e804'; } /* '' */
+.icon-github:before { content: '\e805'; } /* '' */
+.icon-instagram-filled:before { content: '\e806'; } /* '' */
+.icon-instagram:before { content: '\e807'; } /* '' */
+.icon-travis-ci-icon:before { content: '\e808'; } /* '' */

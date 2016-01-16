@@ -1,0 +1,23 @@
+{
+  "name": "slashroots-foundation",
+  "version": "0.5.0",
+  "homepage": "https://github.com/slashroots/slashroots-website-v2",
+  "authors": [
+    "tremainebuchanan <tremainekbuchanan@gmail.com>"
+  ],
+  "description": "SlashRoots Foundation dynamic website",
+  "main": "keystone.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "bootstrap": "~3.3.6"
+  }
+}

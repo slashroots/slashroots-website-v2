@@ -1,0 +1,445 @@
+
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.no-margin {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.on-grid-row {
+	margin-right:auto;
+	margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .on-grid-row {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .on-grid-row {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .on-grid-row {
+    width: 1170px;
+  }
+}
+
+/*---------------------- Box Model ---------------------*/
+
+.box, .box-news {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+@media (max-width:767px) {
+    .box {
+        width: 90vw;
+        height: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .box-3col { 
+        height: 220px;
+    }
+    .box-4col, .box-8col {
+        height: 345px;
+    }  
+}
+@media (min-width:992px) and (max-width:1199px) {
+    .box-3col { 
+        height: 212.5px;
+    }
+    .box-4col {
+        height: 293.328px;
+    }
+    .box-8col {
+        height: 616.656px;
+    }
+    .box-news-text {
+        height: 330px;
+    }
+}
+@media (min-width:1200px) {
+    .box-3col { 
+        height: 262.5px;
+    }
+    .box-4col {
+        height: 360px;
+    }    
+        .box-8col {
+        height: 750px;
+    }
+}
+.box-1 {}
+.box-2 {}
+.box-3 {}
+.box-4 {}
+.box-5 {}
+.box-6 {}
+.box-news {
+    border: solid 1px #8b8b8b;
+    overflow: hidden;
+}
+.box-news-item1 .box-news-photo {background-image: url(/images/ogpsummit.jpg);}
+.box-news-item2 .box-news-photo {background-image: url(/images/caribbean-tide.jpg);}
+.box-event-item .box-news-photo {background-image: url(/images/george.jpg);}
+.box-news-photo, .box-news-text {margin-top:0px; margin-bottom: 0px;}
+.box-news-text {
+    padding-top: 15px;
+    background: #ffffff;
+    color: #787878;
+}
+.box-news-text p {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .box-event-item {
+        height: 347px;
+    }
+    .box-event-item .box-news-photo{
+        float: left;
+        width: 345px;
+    }
+    .box-event-item .box-news-text{
+        float: left;
+        width: 373px;
+    }
+}
+@media (max-width: 767px) {
+    .box-news-photo, .box-news-text {
+        float: none;
+    }    
+}
+
+#footer {
+    background-color: #898989;
+    height: 200px;
+    margin-top: 50px;
+}
+
+/*------------------ End of Box Model ------------------*/
+
+
+/*------------------ Navbar ----------------*/
+
+#header-navbar {
+	height: 60px;
+}
+
+#navbar-wrapper {
+	margin-top: 5px;
+}
+
+.navbar {
+    background: #ffffff; 
+    height: 60px; 
+    width:100%; 
+}
+
+@media(max-width:767px){
+	.navbar {
+		min-height: 60px;
+		height: auto;
+	}
+}
+
+.navbar #logo {
+    background-image: url(/images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.navbar #logo-mobile {
+	display: none;
+}
+
+#logo-white {
+    background-image: url(/images/logo-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    width: 200px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 1%;
+}
+
+
+
+@media(max-width:767px){
+	#main-navbar {
+		background-color:#ffffff; 
+		margin-top:50px;
+		text-align:center;
+		margin-bottom: 0px;
+		padding: 0px;
+	}
+/*
+	#main-navbar .dropdown-menu {
+		text-align: right;
+	}
+*/
+	
+.navbar #logo-mobile {
+    background-image: url(/images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    height: 40px;
+	width: 160px;
+    margin-top: 0px;
+	display: block;
+}	
+	
+	.navbar-toggle {
+		float:none; 
+		right:0px; 
+		position:absolute; 
+		border: 1px solid #ffffff;
+	}
+
+	.dropdown, #main-navbar > li {
+		border-bottom: 1px solid #cccccc;
+	}
+	
+	.dropdown-menu > li {
+		text-align: center;		
+	}
+	
+/*
+	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+		background-color: transparent;
+	}
+*/
+	
+}
+#hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+	margin-top: -60px;
+    padding-bottom: 45%;
+    background-size: cover;
+}
+
+/*------------------------------ Colour ------------------------------*/
+
+.white-text {color: #ffffff}
+.black-text {color: #000000}
+.light-grey-text {color: #cccccc}
+.medium-grey-text {color: #737373;}
+.dark-grey-text {color: #404040}
+
+.white-background {background-color: #ffffff}
+.black-background {background-color: #000000}
+.light-grey-background {background-color: #cccccc}
+.medium-grey-background {background-color: #737373;}
+.dark-grey-background {background-color: #404040;}
+
+.medium-grey-border {border-color: #737373;}
+.dark-grey-border {border-color: #404040;}
+
+.box-border {border: 1px solid}
+
+
+
+/*--------------------------------------------------------------------*/
+
+
+/*---------------------------- Typography ----------------------------*/
+.title-1, .title-2, .title-3 {
+    font-family: 'Roboto Slab';
+    line-height: 110%;
+}
+
+.title-1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+.title-2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.title-3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.sub-title-1, .label-text, .body-copy {
+    font-family: 'Roboto';
+}
+
+.sub-title-1 {    
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.label-text-1 {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.label-text-2 {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.body-copy {
+    font-weight: 300;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.code {
+	font-family: "Courier New", Courier, monospace;
+}
+
+
+/*--------------------------------------------------------------------*/
+
+/*--------------------- Captions, labels and overlays ----------------*/
+.box-caption {
+    background-color: rgba(0,0,0,0.4);
+    width:100%; 
+    position:absolute; 
+    bottom:0px;    
+}
+
+#hero .box-caption {min-height: 30vh;}
+.box .box-caption {min-height: 125px;}
+.box-3col .box-caption {min-height: 100px;}
+
+.label {
+    background: #ffffff;    
+    margin-left: 15px;
+    padding: 5px; 
+    float: left;
+    clear: both;
+    box-shadow: 1px 1px 1px #888888;
+}
+
+.box-caption .label {margin-top: -10px;}
+.article .label {margin-top: -10px;}
+
+#hero .title-1 {
+    display: inline-block;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+@media(max-width:767px){
+	#hero .title-1 {
+		margin-bottom: 50px
+	}
+}
+
+.box .title-2 {
+    display: inline-block;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#hero .sub-title-1 {
+    display: inline-block;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-left: 15px;
+	margin-right: 15px;
+    margin-bottom: 60px;
+}
+@media(max-height:767px){
+	#hero .sub-title-1 {
+		display:none;
+	}
+}
+
+.view-profile {
+    position: absolute; 
+    bottom:15px; 
+    left: 15px;
+}
+
+.article-body {margin-top:-25vh;}
+.article .title-1 {margin-bottom: 10px; margin-top: 15px; margin-left: 15px;}
+.article .sub-title-1 {margin-bottom: 20px; margin-left: 15px;}
+.article .body-copy p {margin-bottom: 20px; margin-left: 15px;}
+
+/*------------------------------------------------------*/
+/*--------------------- Glyphicons ---------------------*/
+/*------------------------------------------------------*/
+#icons {
+    margin-top: 30px;
+    float: right;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('/font/fontello.eot?43780039');
+  src: url('/font/fontello.eot?43780039#iefix') format('embedded-opentype'),
+       url('/font/fontello.woff?43780039') format('woff'),
+       url('/font/fontello.ttf?43780039') format('truetype'),
+       url('/font/fontello.svg?43780039#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.demo-icon
+{
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    speak: none;
+    color: #ffffff;
+
+    display: inline-block;
+    float: left;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 20px;
+    text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/*------------------- End Glyphicons -------------------*/
+/*------------------------------------------------------*/
