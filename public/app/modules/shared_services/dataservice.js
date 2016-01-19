@@ -15,7 +15,7 @@
         return service;
 
         function getPosts(){
-            return $http.get('/keystone/posts')
+            return $http.get('/api/posts')
                 .then(getPostsSuccessful)
                 .catch(getPostsFailed);
 

@@ -16,7 +16,7 @@ var routes = {
 exports = module.exports = function(app) {
 	
 	// Views
-	//app.get('/', routes.views.index);
+	app.get('/', routes.views.index);
 	//app.get('/blog/:category?', routes.views.blog);
 	//app.get('/post/:post', routes.views.post);
 	//app.get('/gallery', routes.views.gallery);
@@ -27,4 +27,5 @@ exports = module.exports = function(app) {
 	//API Routes
 	app.get('/api/posts', keystone.middleware.api, routes.api.post.index);
 	app.get('/api/posts/:id', keystone.middleware.api, routes.api.post.show);
+	//app.get('/api/posts/search', keystone.middleware.api, routes.api.post.search);
 };
