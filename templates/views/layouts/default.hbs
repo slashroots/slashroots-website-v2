@@ -11,7 +11,7 @@
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
     </head>
 
-	<body ng-app="srf">
+	<body ng-app="slashroots">
 		<div id="body" ng-view>
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
@@ -58,11 +58,15 @@
 			  ga('create', 'UA-21812170-1', 'auto');
 			  ga('send', 'pageview');
 		</script>
-		<script src="/bower_components/angular/angular.js"></script>
-		<script src="/bower_components/angular-route/angular-route.min.js"></script>
 		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 		<script src="/app/modules/app.module.js"></script>
+		<script src="/app/modules/shared_services/sharedservices.module.js"></script>
+		<script src="/app/modules/shared_services/dataservice.js"></script>
 		<script src="/app/modules/home/home.module.js"></script>
 		<script src="/app/modules/home/home.controller.js"></script>
 		{{!--

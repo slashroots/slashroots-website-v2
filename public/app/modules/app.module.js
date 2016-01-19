@@ -4,7 +4,8 @@
 (function(){
     'use strict';
     angular
-        .module('srf',[
-            'home'
+        .module('slashroots',[
+            'home',
+            'shared-services'
         ]);
 })();

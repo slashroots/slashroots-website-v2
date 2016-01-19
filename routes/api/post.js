@@ -12,6 +12,12 @@
 		
 	};
 
+	exports.list = function(req, res){
+		Post.model.find(function(err, posts){
+
+		});
+	};
+
 	function getPostsByAuthor(author){
 		
 	}

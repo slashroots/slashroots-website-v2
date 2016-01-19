@@ -1,17 +1,9 @@
-<!-- CAROUSEL -->
-<header id="header-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-	<!-- Wrapper for Slides -->
-	<div class="carousel-inner">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-			<li data-target="#header-carousel" data-slide-to="1"></li>
-			<li data-target="#header-carousel" data-slide-to="2"></li>
-		</ol>
-		<!-- Slides -->
-		<div class="item active">
-			<a href="open_data_public_service.html">
-				<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url(/images/caribbean_tide_hero.jpg);">
+<header id="header-carousel" class="carousel slide">
+	<uib-carousel interval="interval" no-wrap="noWrapSlides">
+		<uib-slide ng-repeat="slide in slides" active="slide.active">
+			<a href="{{slide.link}}">
+				<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding"
+				ng-style="{'background-image': 'url({{ slide.image }})'}">
 					<div class="box-caption">
 						<!--------------------Hero-------------------->
 						<div class="row on-grid-row">
@@ -19,76 +11,19 @@
 								<div class="label label-text-2 black-text">
 									IDEAS
 								</div>
-													<span class="title-1 white-text">
-														A Caribbean Open Data Public Service
-													</span>
-													<span class="sub-title-1 white-text">
-														Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets
-													</span>
+								<span class="title-1 white-text">
+									{{slide.title}}
+								</span>
+								<span class="sub-title-1 white-text">
+									{{slide.subtitle}}
+								</span>
 							</div>
 						</div>
 						<!--------------------Hero-------------------->
 					</div>
 				</div>
 			</a>
-		</div>
-		<div class="item">
-			<!-- Set the second background image using inline CSS below. -->
-			<a href="open_data_public_service.html">
-				<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url(/images/do-not-thief.jpg);">
-					<div class="box-caption">
-						<!--------------------Hero-------------------->
-						<div class="row">
-							<div class="col-sm-12 col-md-12 col-lg-12">
-								<div class="label label-text-2 black-text">
-									IDEAS
-								</div>
-													<span class="title-1 white-text">
-														Working On Things That Matter
-													</span>
-													<span class="sub-title-1 white-text">
-														SlashRoots is a civic tech non-profit helping the Caribbean’s leading institutions better use technology and design to achieve their missions and empower communities
-													</span>
-							</div>
-						</div>
-						<!--------------------Hero-------------------->
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="item">
-			<!-- Set the third background image using inline CSS below. -->
-			<a href="https://groups.google.com/forum/#!forum/slashroots">
-				<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url(/images/post_its-large.jpg);">
-					<div class="box-caption">
-						<!--------------------Hero-------------------->
-						<div class="row">
-							<div class="col-sm-12 col-md-12 col-lg-12">
-								<div class="label label-text-2 black-text">
-									INITATIVES
-								</div>
-													<span class="title-1 white-text">
-														A community for doers, makers and innovators
-													</span>
-													<span class="sub-title-1 white-text">
-														Join a Caribbean community working to addWant to contribute to a more open and collaborative Caribbean? Learn more about the SlashRoots Community here
-													</span>
-							</div>
-						</div>
-						<!--------------------Hero-------------------->
-					</div>
-				</div>
-			</a>
-		</div>
-		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#header-carousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#header-carousel" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
+		</uib-slide>
+	</uib-carousel>
 </header>
 <!-- END CAROUSEL -->

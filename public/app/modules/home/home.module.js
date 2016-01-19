@@ -5,7 +5,8 @@
     'use strict';
     angular
         .module('home',[
-        'ngRoute'
+            'ngRoute',
+            'ui.bootstrap'
     ]).config(config);
     /**
      *
@@ -16,6 +17,6 @@
             .when('/', {
                templateUrl: 'app/modules/home/home.html',
                 controller: 'Home'
-            });
+            }).otherwise({redirectTo : '/'});
     }
 })();

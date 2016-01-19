@@ -25,5 +25,6 @@ exports = module.exports = function(app) {
 	app.get('/devca', routes.views.devca);
 	app.get('/author/:name', routes.views.posts);
 	//API Routes
-	app.get('/posts', routes.api.post.index);
+	app.get('/api/post/list', keystone.initAPI, routes.api.posts.list);
+	//app.get('/posts', routes.api.post.index);
 };
