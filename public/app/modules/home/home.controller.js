@@ -12,6 +12,7 @@
         });
 
     Home.$inject = ['$scope', 'dataService', 'CAROUSEL'];
+
     /**
      *
      * @constructor
@@ -19,12 +20,11 @@
     function Home($scope, dataService, CAROUSEL){
         $scope.interval = CAROUSEL.interval;
         $scope.noWrapSlides = CAROUSEL.noWrapSlides;
-
         activate();
 
         function activate(){
             dataService.getPosts().query({state: 'published'},function(posts){
-               console.log(posts);
+                console.log(posts);
             });
 
             dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){

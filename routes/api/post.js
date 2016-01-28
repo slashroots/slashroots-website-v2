@@ -18,6 +18,7 @@
 		}
 		Post.model
 			.find(query)
+			.populate('author')
 			.exec(function(err, posts){
 				if(err || !posts){
 					utils.handleDBError(err, res)
@@ -34,7 +35,9 @@
 	exports.show = function(req, res){
 		Post
 			.model
-			.find({slug : req.params.slug})
+			.findOne({slug : req.params.slug})
+			.populate('author')
+			.select('-password')
 			.exec(function(err, post){
 				if(err || !post){
 					utils.handleDBError(err, res);

@@ -16,6 +16,7 @@
     function dataService($resource, ROUTES){
         var service = {
             getPosts : getPosts,
+            getPost: getPost,
             getCarouselItems: getCarouselItems,
             getNewsItems: getNewsItems
         };
@@ -25,6 +26,12 @@
         function getPosts(){
             return $resource(ROUTES.baseUrl + 'posts',{},{
                 query: {method: 'GET', isArray: true}
+            });
+        }
+
+        function getPost(){
+            return $resource(ROUTES.baseUrl + 'posts/:slug',{},{
+                show : {method: 'GET', params:{ slug: '@slug'}}
             });
         }
 

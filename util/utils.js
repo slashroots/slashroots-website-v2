@@ -17,7 +17,7 @@
                 break;
             case "Unknown Server Error": res.status(500).send(error.name);
                 break;
-            default: res.status(500).send(error.name);
+            default: res.status(500).send("Unknown SErver Error");
         }
     };
     /**

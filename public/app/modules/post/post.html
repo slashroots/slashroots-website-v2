@@ -1,0 +1,61 @@
+<div class="container-fluid">
+	<div class="row" ng-include="'app/modules/partials/navbar.html'"></div>
+</div>
+<div class="row">
+	<div class="no-padding col-sm-12 col-md-12 col-lg-12">
+		<!--------------------Hero-------------------->
+		<!--<a href="open_data_public_service.html">-->
+		<div id="hero" style="background-image: url({{post.image.secure_url}});">
+			<!--<div id="hero-caption-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="box-caption col-sm-12 col-md-12 col-lg-12">
+							<div class="label">
+								TESTING
+							</div>
+							<span class="box-caption-headline">
+								A Caribbean Open Data Public Service
+							</span>
+							<span class="box-caption-text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis enim, fringilla id porta eu, congue et purus. Mauris sodales, nibh nec maximus venenatis, magna augue feugiat tortor, vel egestas leo justo non diam. Cras ac eros molestie metus tempor accumsan.
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>
+		<!--</a>-->
+		<!--------------------Hero-------------------->
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="article-body white-background col-sm-12 col-md-12 col-lg-12">
+			<div class="row">
+				<div class="article no-padding col-sm-8 col-md-9 col-lg-9">
+					<div class="label label-text-2 black-text">
+						IDEAS
+					</div>
+					<div class="title-1">{{post.title}}</div>
+					<div class="sub-title-1">Nullam lacinia finibus leo, et commodo quam varius ac.</div>
+					<div class="body-copy" ng-bind-html=" post.content.extended | sanitize ">
+
+					</div>
+				</div>
+				<div class="hidden-xs col-sm-4 col-md-3 col-lg-3">
+					<div class="box box-3col" style="background-image: url('images/matthew.jpg');">
+						<div class="box-caption">
+							<div class="label label-text-2 dark-grey-text">Written By</div>
+                                    <span class="box-caption-headline title-2 white-text">
+                                        {{post.author.name.first}} {{post.author.name.last}}
+                                    </span>
+						</div>
+						<div class="view-profile">
+							<a class="white-text label-text-1" href="">View Profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -4,10 +4,8 @@
 (function(){
     'use strict';
     angular
-        .module('home',[
-            'ngRoute',
-            'ui.bootstrap'
-    ]).config(config);
+        .module('home',[])
+        .config(config);
     /**
      *
      * @param $routeProvider
