@@ -5,42 +5,36 @@
     'use strict';
     angular
         .module('home')
-        .controller('Home', Home);
+        .controller('Home', Home)
+        .constant('CAROUSEL',{
+           interval : 5000,
+            noWrapSlides : false
+        });
 
-    Home.$inject = ['$scope', 'dataService'];
+    Home.$inject = ['$scope', 'dataService', 'CAROUSEL'];
     /**
      *
      * @constructor
      */
-    function Home($scope, dataService){
-        $scope.interval = 5000;
-        $scope.noWrapSlides = false;
+    function Home($scope, dataService, CAROUSEL){
+        $scope.interval = CAROUSEL.interval;
+        $scope.noWrapSlides = CAROUSEL.noWrapSlides;
 
         activate();
 
         function activate(){
-            dataService.getPosts().then(function(data){
-                console.log(data);
+            dataService.getPosts().query({state: 'published'},function(posts){
+               console.log(posts);
             });
-        }
 
-        $scope.slides = [{
-            "link": "www.yahoo.com",
-            "title": "A Caribbean Open Data Public Service",
-            "subtitle": "Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets",
-            "image" : "images/caribbean_tide_hero.jpg"
-        },
-            {
-                "link": "www.yahoo.com",
-                "title": "Second",
-                "subtitle": "Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets",
-                "image" : "images/do-not-thief.jpg"
-            },
-            {
-                "link": "www.yahoo.com",
-                "title": "Third",
-                "subtitle": "Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets",
-                "image" : "images/post_its-large.jpg"
-            }];
+            dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){
+                $scope.slides = carousel_items;
+                console.log(carousel_items);
+            });
+
+            dataService.getNewsItems().query({state: 'published'}, function(news){
+                $scope.news = news;
+            })
+        }
     }
 })();

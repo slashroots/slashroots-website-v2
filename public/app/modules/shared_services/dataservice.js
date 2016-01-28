@@ -3,29 +3,41 @@
  */
 (function(){
     angular
-        .module('dataservice',[])
-        .factory('dataService', dataService);
+        .module('dataservice',[
+            'ngResource'
+        ]).factory('dataService', dataService)
+        .constant('ROUTES',{
+           baseUrl: '/api/'
+        });
 
-    dataService.$inject = ['$http'];
-    function dataService($http){
+
+    dataService.$inject = ['$resource', 'ROUTES'];
+
+    function dataService($resource, ROUTES){
         var service = {
-            getPosts : getPosts
+            getPosts : getPosts,
+            getCarouselItems: getCarouselItems,
+            getNewsItems: getNewsItems
         };
 
         return service;
 
         function getPosts(){
-            return $http.get('/api/posts')
-                .then(getPostsSuccessful)
-                .catch(getPostsFailed);
+            return $resource(ROUTES.baseUrl + 'posts',{},{
+                query: {method: 'GET', isArray: true}
+            });
+        }
 
-            function getPostsSuccessful(response){
-                return response.data;
-            }
+        function getCarouselItems(){
+            return $resource(ROUTES.baseUrl + 'search',{},{
+                query: {method: 'GET', isArray: true}
+            });
+        }
 
-            function getPostsFailed(error){
-                return error;
-            }
+        function getNewsItems(){
+            return $resource(ROUTES.baseUrl + 'news', {},{
+               query: {method: 'GET', isArray: true}
+            });
         }
     }
 

@@ -31,5 +31,9 @@ Post.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;
 });
 
+Post.schema.statics.search = function(query, callback){
+	return this.find(query, callback);
+};
+
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();

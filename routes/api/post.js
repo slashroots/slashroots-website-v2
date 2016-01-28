@@ -1,7 +1,6 @@
 (function(){
 	var keystone = require('keystone'),
 		Post = keystone.list('Post'),
-		User = keystone.list('User'),
 		utils = require('../../util/utils'),
 		_ = require('underscore');
 	/**
@@ -9,7 +8,7 @@
 	 * @param req
 	 * @param res
 	 */
-	exports.search = function(req, res){
+	exports.index = function(req, res){
 		var query = {};
 		//Build a query based on query parameters list.
 		//If no query parameters are present,
