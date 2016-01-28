@@ -21,11 +21,10 @@ Post.add({
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 }
 	},
-	project: {type: Types.Relationship, ref: 'Post', many: true},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
-	group: {type: Types.Select, options: 'group-one, group-two, blog-articles, carousel'},
-	position : {type: Types.Select, options: 'a, b, large, first, second, third', default: 'a', index: true},
-	video: {type: Types.Url}
+	homePage : { type: Types.Select, options: 'yes, no'},
+	carousel: {type: Types.Select, options: 'yes, no', dependsOn: {homePage: 'yes'}},
+	positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}}
 });
 
 Post.schema.virtual('content.full').get(function() {
