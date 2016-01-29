@@ -24,16 +24,28 @@ Post.add({
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 	homePage : { type: Types.Select, options: 'yes, no'},
 	carousel: {type: Types.Select, options: 'yes, no', dependsOn: {homePage: 'yes'}},
-	positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}}
+	positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
+	link: {type: String, noedit: true}
 });
 
 Post.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;
 });
-
+/**
+ * Static method used to search all posts
+ * matching a criteria.
+ * @param query
+ * @param callback
+ * @returns {*}
+ */
 Post.schema.statics.search = function(query, callback){
 	return this.find(query, callback);
 };
+
+Post.schema.pre('save', function(next){
+	this.link = 'posts/' + this.slug;
+	next();
+});
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();

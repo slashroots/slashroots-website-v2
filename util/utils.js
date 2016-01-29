@@ -2,6 +2,16 @@
     'use strict';
     var _ = require('underscore');
     /**
+     * Handles error thrown if the resource is not found.
+     * @param resource
+     * @param res
+     */
+    exports.handleResourceError = function(resource, res){
+        if(!resource){
+            res.status(404).send("Not Found");
+        }
+    };
+    /**
      * This is a generic helper function for MongoDB errors
      * that occur during searching/creating/updating a document.
      * @param err
@@ -9,15 +19,23 @@
      * TODO - Respond with developer friendly error messages
      */
     exports.handleDBError = function(err, res){
-        switch(err.name){
-            case "ValidationError":
-            case "CastError": res.status(400).send(error.name);
-                break;
-            case "Not Found": res.status(404).send(error.name);
-                break;
-            case "Unknown Server Error": res.status(500).send(error.name);
-                break;
-            default: res.status(500).send("Unknown SErver Error");
+        if(err) {
+            if (err.name == "ValidationError") {
+                res.status(400);
+                res.send(err);
+            } else if (err.name == "CastError") {
+                res.status(400);
+                res.send(err);
+            } else if(err.name == "Not Found") {
+                res.status(404);
+                res.send(err);
+            } else {
+                res.status(500);
+                res.send(err);
+            }
+        } else {
+            res.status(500);
+            res.send({error: 'Unknown Server Error'});
         }
     };
     /**
@@ -52,4 +70,22 @@
     function getValues(obj){
         return _.values(obj);
     }
+    /**
+     * Helper function used to merge resources
+     * retrieved from the database.
+     * @param dest
+     * @param src
+     */
+    exports.mergeObjects = function(dest, src){
+        return _.extend(dest, src);
+    };
+    /**
+     * Sorts a list by a given criteria
+     * @param obj
+     * @param criteria
+     * @returns {{value, index, criteria}}
+     */
+    exports.sortObject = function(list,criteria){
+        return _.sortBy(list, criteria);
+    };
 })();

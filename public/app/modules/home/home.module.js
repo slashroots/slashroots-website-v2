@@ -7,7 +7,8 @@
         .module('home',[])
         .config(config);
     /**
-     *
+     * Config function defining module
+     * routes.
      * @param $routeProvider
      */
     function config($routeProvider){

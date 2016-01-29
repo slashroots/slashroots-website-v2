@@ -3,29 +3,7 @@
 </div>
 <div class="row">
 	<div class="no-padding col-sm-12 col-md-12 col-lg-12">
-		<!--------------------Hero-------------------->
-		<!--<a href="open_data_public_service.html">-->
-		<div id="hero" style="background-image: url({{post.image.secure_url}});">
-			<!--<div id="hero-caption-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="box-caption col-sm-12 col-md-12 col-lg-12">
-							<div class="label">
-								TESTING
-							</div>
-							<span class="box-caption-headline">
-								A Caribbean Open Data Public Service
-							</span>
-							<span class="box-caption-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur felis enim, fringilla id porta eu, congue et purus. Mauris sodales, nibh nec maximus venenatis, magna augue feugiat tortor, vel egestas leo justo non diam. Cras ac eros molestie metus tempor accumsan.
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>-->
-		</div>
-		<!--</a>-->
-		<!--------------------Hero-------------------->
+		<div id="hero" style="background-image: url({{post.image.secure_url}});"></div>
 	</div>
 </div>
 <div class="container">
@@ -37,13 +15,12 @@
 						IDEAS
 					</div>
 					<div class="title-1">{{post.title}}</div>
-					<div class="sub-title-1">Nullam lacinia finibus leo, et commodo quam varius ac.</div>
+					<div class="sub-title-1">Post Sub Title</div>
 					<div class="body-copy" ng-bind-html=" post.content.extended | sanitize ">
-
 					</div>
 				</div>
 				<div class="hidden-xs col-sm-4 col-md-3 col-lg-3">
-					<div class="box box-3col" style="background-image: url('images/matthew.jpg');">
+					<div class="box box-3col" style="background-image: url({{post.author.image.secure_url}});">
 						<div class="box-caption">
 							<div class="label label-text-2 dark-grey-text">Written By</div>
                                     <span class="box-caption-headline title-2 white-text">

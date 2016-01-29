@@ -1,25 +1,25 @@
 /**
- * Created by tremaine on 1/27/16.
+ * Created by tremaine on 1/28/16.
  */
 (function(){
     'use strict';
     angular
-        .module('post')
-        .controller('Post', Post);
+        .module('page')
+        .controller('Page', Page);
     /**
      * Module dependency injection
      * @type {string[]}
      */
-    Post.$inject = ['$scope','dataService', '$routeParams'];
+    Page.$inject = ['$scope','$routeParams', 'dataService'];
     /**
      * Controller handling data interaction
      * between the view and the model.
      * @param $scope
-     * @param dataService
      * @param $routeParams
+     * @param dataService
      * @constructor
      */
-    function Post($scope, dataService, $routeParams){
+    function Page($scope, $routeParams, dataService){
 
         activate();
         /**
@@ -27,10 +27,8 @@
          * and other services.
          */
         function activate(){
-            dataService
-                .getPost()
-                .show( {slug: $routeParams.slug }, function(post){
-                    $scope.post = post;
+            dataService.getPage().show({slug: $routeParams.page}, function(page){
+                $scope.page = page;
             });
         }
     }

@@ -2,7 +2,6 @@
  * Created by tremaine on 1/27/16.
  */
 (function(){
-
     'use strict';
     angular
         .module('post',[])
@@ -15,5 +14,4 @@
                 controller: 'Post'
             });
     }
-
 })();
