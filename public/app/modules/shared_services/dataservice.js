@@ -84,7 +84,7 @@
          */
         function getHomePageContent(){
             return $resource(ROUTES.baseUrl + 'search',{},{
-                query : {method: 'GET', isArray: false}
+                query : {method: 'GET', isArray : true}
             });
         }
         /**
