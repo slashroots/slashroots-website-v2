@@ -1,7 +1,7 @@
 /**
  * Created by tremaine on 1/15/16.
  */
-(function(){
+//(function(){
     'use strict';
     angular
         .module('home')
@@ -82,4 +82,4 @@
             return content.slice(start, end)
         }
     }
-})();
+//})();
