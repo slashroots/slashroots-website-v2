@@ -7,44 +7,32 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row">
+	<div class="row" ng-if="grp_one_small > 0">
 		<div class="col-sm-12 col-md-4 col-lg-4">
 			<div class="row">
-				<a ng-href="#/{{page_content[0].link}}" ng-if="page_content[0]">
+				<a ng-href="#/{{content.link}}" ng-repeat="content in grp_one_small">
 					<div class="col-sm-6 col-md-12 col-lg-12">
-						<div class="box box-4col box-1" style="background-image: url({{page_content[0].image.secure_url}});">
+						<div class="box box-4col box-1"
+						     style="background-image: url({{content.image.secure_url}});">
 							<div class="box-caption">
 								<div class="label label-text-2 black-text">IDEAS</div>
                                     <span class="title-2 white-text">
-                                        {{page_content[0].title}}
+                                        {{content.title}}
                                     </span>
 							</div>
 						</div>
 					</div>
 				</a>
-				<a ng-href="#/{{page_content[1].link}}" ng-if="page_content[1]">
-					<div class="col-sm-6 col-md-12 col-lg-12" ng-if="page_content[1]">
-						<div class="box box-4col box-2"
-						     style="background-image: url({{page_content[1].image.secure_url}});">
-							<div class="box-caption">
-								<div class="label label-text-2 black-text">IDEAS</div>
-	                                    <span class="title-2 white-text">
-	                                       {{page_content[1].title}}
-	                                    </span>
-							</div>
-						</div>
-					</div>
-					</a>
 			</div>
 		</div>
-		<a ng-href="#/{{page_content[2].link}}" ng-if="page_content[2]">
-			<div class="col-sm-6 col-md-8 col-lg-8" ng-if="page_content[2]">
+		<a ng-href="#/{{grp_one_lg.link}}">
+			<div class="col-sm-6 col-md-8 col-lg-8">
 				<div class="box box-4col box-2"
-				     style="background-image: url({{page_content[2].image.secure_url}});">
+				     style="background-image: url({{grp_one_lg.image.secure_url}});">
 					<div class="box-caption">
 						<div class="label label-text-2 black-text">IDEAS</div>
 	                            <span class="title-2 white-text">
-	                                {{page_content[2].title}}
+	                                {{grp_one_lg.title}}
 	                            </span>
 					</div>
 				</div>
@@ -53,40 +41,29 @@
 			<div class="box box-4col box-4">4</div>
 		</div>
 	</div>
-	<div class="row">
-		<a ng-href="#/{{page_content[3].link}}" ng-if="page_content[3]">
-		<div class="hidden-sm col-md-8 col-lg-8" ng-if="page_content[3]">
-			<div class="box box-8col box-4" style="background-image: url({{page_content[3].image.secure_url}});">
+	<div class="row" ng-if="grp_two_small.length > 0">
+		<a ng-href="#/{{grp_two_lg.link}}">
+		<div class="hidden-sm col-md-8 col-lg-8">
+			<div class="box box-8col box-4" style="background-image: url({{grp_two_lg.image.secure_url}});">
 				<div class="box-caption">
 					<div class="label label-text-2 black-text">IDEAS</div>
                             <span class="title-2 white-text">
-                                {{page_content[3].title}}
+                                {{grp_two_lg.title}}
                             </span>
 				</div>
 			</div>
 		</div></a>
 
-		<div class="col-sm-12 col-md-4 col-lg-4">
+		<div class="col-sm-12 col-md-4 col-lg-4" >
 			<div class="row">
-				<a ng-href="#/{{page_content[4].link}}" ng-if="page_content[4]">
-				<div class="col-sm-6 col-md-12 col-lg-12" ng-if="page_content[4]">
+				<a ng-href="#/{{content.link}}" ng-repeat="content in grp_two_small">
+				<div class="col-sm-6 col-md-12 col-lg-12">
 					<div class="box box-4col box-5"
-					     style="background-image: url({{page_content[4].image.secure_url}});">
+					     style="background-image: url({{content.image.secure_url}});">
 						<div class="box-caption">
 							<div class="label label-text-2 black-text">IDEAS</div>
                                     <span class="title-2 white-text">
-                                        {{page_content[4].title}}
-                                    </span>
-						</div>
-					</div>
-				</div></a>
-				<a ng-href="#/{{page_content[5].link}}" ng-if="page_content[5]">
-				<div class="col-sm-6 col-md-12 col-lg-12" ng-if="page_content[5]">
-					<div class="box box-4col box-6" style="background-image: url({{page_content[5].image.secure_url}});">
-						<div class="box-caption">
-							<div class="label label-text-2 black-text">IDEAS</div>
-                                    <span class="title-2 white-text">
-                                        {{page_content[5].title}}
+                                        {{content.title}}
                                     </span>
 						</div>
 					</div>
