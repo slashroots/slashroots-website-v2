@@ -25,7 +25,7 @@
 				</a>
 			</div>
 		</div>
-		<a ng-href="#/{{grp_one_lg.link}}">
+		<a ng-href="#/{{grp_one_lg.link}}" ng-if="grp_one_lg">
 			<div class="col-sm-6 col-md-8 col-lg-8">
 				<div class="box box-4col box-2"
 				     style="background-image: url({{grp_one_lg.image.secure_url}});">
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" ng-if="news.length > 0">
 		<div class="col-sm-12 col-md-4 col-lg-4" ng-repeat="item in news">
 			<div class="box-news box-event-item" >
 				<div class="box box-4col box-news-photo"

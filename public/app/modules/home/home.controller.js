@@ -31,7 +31,7 @@
         $scope.interval = CAROUSEL.interval;
         $scope.noWrapSlides = CAROUSEL.noWrapSlides;
         $scope.grp_one_small = {};
-        $scope.grp_two_small ={};
+        $scope.grp_two_small = {};
         $scope.grp_one_lg = {};
         $scope.grp_two_lg = {};
 
@@ -55,19 +55,25 @@
                         $scope.grp_two_small = sliceContentList(content, 4, 6);
                         $scope.grp_one_lg = grp_one_lg[0];
                         $scope.grp_tw_lg = grp_two_lg[0];
-            });
+            }, function(error){
+
+                });
             /**
              * Retrieve all resources (pages and posts) which are flagged
              * for display within the carousel.
              */
             dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){
                 $scope.slides = carousel_items;
+            }, function(error){
+                $scope.slides = {};
             });
             /**
              * Retrieve all published news items.
              */
             dataService.getNewsItems().query({state: 'published'}, function(news){
                 $scope.news = news;
+            }, function(error){
+                $scope.news = {};
             });
         }
         /**
