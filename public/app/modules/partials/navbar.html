@@ -1,7 +1,9 @@
 <div id="header-navbar" class="col-sm-12 col-md-12 col-lg-12">
 	<nav class="navbar navbar-fixed-top">
 		<div class="row on-grid-row">
-			<nav id="logo" class="navbar-left hidden-xs col-sm-3 col-md-3 col-lg-3"></nav>
+			<a href="#/">
+				<nav id="logo" class="navbar-left hidden-xs col-sm-3 col-md-3 col-lg-3"></nav>
+			</a>
 			<nav id="navbar-wrapper" class="navbar-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
 				<div id="logo-mobile"></div>
 				<button type="button" class="navbar-toggle collapsed dark-grey-border box-border" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
@@ -18,14 +20,21 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" uib-dropdown-menu>
-							<li><a href="#/projects">Projects</a></li>
-							<li><a href="#/initiatives">Initiatives</a></li>
+							<!--<li><a href="#/projects">Projects</a></li>-->
+							<!--<li><a href="#/initiatives">Initiatives</a></li>-->
 							<li><a href="#/community">Community</a></li>
 							<li><a href="#/our-process">Our Process</a></li>
 						</ul>
 					</li>
-					<li><a class="dark-grey-text" href="#/ideas">Ideas</a></li>
-					<li><a class="dark-grey-text" href="#/team">Team</a></li>
+					<li class="dropdown" uib-dropdown>
+						<a class="dropdown-toggle dark-grey-text" uib-dropdown-toggle>
+							About
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" uib-dropdown-menu>
+							<li><a class="dark-grey-text" href="#/about-us">About Us</a></li>
+						</ul>
+					</li>
 					<li><a class="dark-grey-text" href="#/contact">Contact</a></li>
 				</ul>
 			</nav>

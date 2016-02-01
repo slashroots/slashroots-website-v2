@@ -14,18 +14,12 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-	
-	// Views
+	// Renders default page layout for the application.
 	app.get('/', routes.views.index);
-	//app.get('/blog/:category?', routes.views.blog);
-	//app.get('/post/:post', routes.views.post);
-	//app.get('/gallery', routes.views.gallery);
-	//app.get('/contact', routes.views.contact);
-	//app.get('/about', routes.views.about);
-	//app.get('/devca', routes.views.devca);
-	//app.get('/author/:name', routes.views.posts);
-	//API Routes
+	//Custom api endpoints created for consumption by the front end.
 	app.get('/api/posts', keystone.middleware.api, routes.api.post.index);
-	app.get('/api/posts/:id', keystone.middleware.api, routes.api.post.show);
-	//app.get('/api/posts/search', keystone.middleware.api, routes.api.post.search);
+	app.get('/api/search', keystone.middleware.api, routes.api.search.index);
+	app.get('/api/news', keystone.middleware.api, routes.api.news.index);
+	app.get('/api/posts/:slug', keystone.middleware.api, routes.api.post.show);
+	app.get('/api/pages/:slug', keystone.middleware.api, routes.api.page.show);
 };

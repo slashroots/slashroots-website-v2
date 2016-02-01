@@ -9,7 +9,15 @@
     margin-bottom: 0px;
     margin-left: 0px;
 }
-
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.floar-none {
+	float: none;
+}
 .on-grid-row {
 	margin-right:auto;
 	margin-left: auto;
@@ -31,13 +39,16 @@
   }
 }
 
+.spacer-small {height: 20px; width: 100%;}
+.spacer-large {height: 80px; width: 100%;}
+
 /*---------------------- Box Model ---------------------*/
 
 .box, .box-news {
     margin-top: 15px;
     margin-bottom: 15px;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     position: relative;
 }
 @media (max-width:767px) {
@@ -50,7 +61,7 @@
 }
 @media (min-width:768px) and (max-width:991px) {
     .box-3col { 
-        height: 220px;
+        height: 345px;
     }
     .box-4col, .box-8col {
         height: 345px;
@@ -123,6 +134,15 @@
     }    
 }
 
+#hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+	margin-top: -60px;
+    padding-bottom: 45%;
+    background-size: cover;
+}
+
 #footer {
     background-color: #898989;
     height: 200px;
@@ -144,7 +164,7 @@
 
 .navbar {
     background: #ffffff; 
-    height: 60px; 
+    height: 70px; 
     width:100%; 
 }
 
@@ -160,7 +180,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     float: left;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
 }
 
@@ -195,16 +215,16 @@
 	}
 */
 	
-.navbar #logo-mobile {
-    background-image: url(../images/logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    float: left;
-    height: 40px;
-	width: 160px;
-    margin-top: 0px;
-	display: block;
-}	
+	.navbar #logo-mobile {
+		background-image: url(../images/logo.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		float: left;
+		height: 60px;
+		width: 200px;
+		margin-top: 0px;
+		display: block;
+	}	
 	
 	.navbar-toggle {
 		float:none; 
@@ -228,14 +248,33 @@
 */
 	
 }
-#hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-	margin-top: -60px;
-    padding-bottom: 45%;
-    background-size: cover;
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar {
+    border-width: 0px;
+  }
+	.sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }
+
+
 
 /*------------------------------ Colour ------------------------------*/
 
@@ -268,12 +307,18 @@
 }
 
 .title-1 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 700;
 }
 .title-2 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
+}
+@media (max-width: 1199px) {
+	.title-2 {
+		font-size: 17px;
+		font-weight: 700;
+	}	
 }
 .title-3 {
     font-size: 15px;
@@ -285,8 +330,8 @@
 }
 
 .sub-title-1 {    
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 100;
 }
 
 .label-text-1 {
@@ -323,6 +368,7 @@
 #hero .box-caption {min-height: 30vh;}
 .box .box-caption {min-height: 125px;}
 .box-3col .box-caption {min-height: 100px;}
+.team .box-3col .box-caption {min-height: 80px}
 
 .label {
     background: #ffffff;    
@@ -335,6 +381,8 @@
 
 .box-caption .label {margin-top: -10px;}
 .article .label {margin-top: -10px;}
+.team .label {display: none}
+
 
 #hero .title-1 {
     display: inline-block;
@@ -349,6 +397,22 @@
 		margin-bottom: 50px
 	}
 }
+
+.box .body-copy {
+    display: inline-block;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.team .box .body-copy {
+	position:absolute; 
+	margin-bottom:15px; 
+	left:0px; 
+	bottom:0px;
+}
+ 
 
 .box .title-2 {
     display: inline-block;
@@ -381,9 +445,9 @@
 }
 
 .article-body {margin-top:-25vh;}
-.article .title-1 {margin-bottom: 10px; margin-top: 15px; margin-left: 15px;}
-.article .sub-title-1 {margin-bottom: 20px; margin-left: 15px;}
-.article .body-copy p {margin-bottom: 20px; margin-left: 15px;}
+.article .title-1 {margin-bottom: 10px; margin-top: 15px; margin-left: 15px;  margin-right: 15px;}
+.article .sub-title-1 {margin-bottom: 20px; margin-left: 15px; margin-right: 15px;}
+.article .body-copy p {margin-bottom: 20px; margin-left: 15px; margin-right: 15px;}
 
 /*------------------------------------------------------*/
 /*--------------------- Glyphicons ---------------------*/

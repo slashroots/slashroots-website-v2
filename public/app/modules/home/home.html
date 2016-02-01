@@ -7,132 +7,83 @@
 	</div>
 </div>
 <div class="container">
-	<div class="row">
+	<div class="row" ng-if="grp_one_small > 0">
 		<div class="col-sm-12 col-md-4 col-lg-4">
 			<div class="row">
-				<div class="col-sm-6 col-md-12 col-lg-12">
-					<div class="box box-4col box-1" style="background-image: url(/images/post_its.jpg);">
-						<div class="box-caption">
-							<div class="label label-text-2 black-text">IDEAS</div>
+				<a ng-href="#/{{content.link}}" ng-repeat="content in grp_one_small">
+					<div class="col-sm-6 col-md-12 col-lg-12">
+						<div class="box box-4col box-1"
+						     style="background-image: url({{content.image.secure_url}});">
+							<div class="box-caption">
+								<div class="label label-text-2 black-text">IDEAS</div>
                                     <span class="title-2 white-text">
-                                        A Caribbean Open Data Public Service
+                                        {{content.title}}
                                     </span>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-md-12 col-lg-12">
-					<div class="box box-4col box-2" style="background-image: url(/images/devca.jpg);">
-						<div class="box-caption">
-							<div class="label label-text-2 black-text">IDEAS</div>
-                                    <span class="title-2 white-text">
-                                        A Caribbean Open Data Public Service
-                                    </span>
-						</div>
+				</a>
+			</div>
+		</div>
+		<a ng-href="#/{{grp_one_lg.link}}" ng-if="grp_one_lg">
+			<div class="col-sm-6 col-md-8 col-lg-8">
+				<div class="box box-4col box-2"
+				     style="background-image: url({{grp_one_lg.image.secure_url}});">
+					<div class="box-caption">
+						<div class="label label-text-2 black-text">IDEAS</div>
+	                            <span class="title-2 white-text">
+	                                {{grp_one_lg.title}}
+	                            </span>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-8 col-lg-8">
-			<div class="box box-8col box-3" style="background-image: url(/images/cftc.jpg);">
-				<div class="box-caption">
-					<div class="label label-text-2 black-text">IDEAS</div>
-                            <span class="title-2 white-text">
-                                A Caribbean Open Data Public Service
-                            </span>
-				</div>
-			</div>
-		</div>
+			</div></a>
 		<div class="col-sm-6 hidden-md hidden-lg">
 			<div class="box box-4col box-4">4</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" ng-if="grp_two_small.length > 0">
+		<a ng-href="#/{{grp_two_lg.link}}">
 		<div class="hidden-sm col-md-8 col-lg-8">
-			<div class="box box-8col box-4" style="background-image: url(/images/hackathon.jpg);">
+			<div class="box box-8col box-4" style="background-image: url({{grp_two_lg.image.secure_url}});">
 				<div class="box-caption">
 					<div class="label label-text-2 black-text">IDEAS</div>
                             <span class="title-2 white-text">
-                                A Caribbean Open Data Public Service
+                                {{grp_two_lg.title}}
                             </span>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-12 col-md-4 col-lg-4">
+		</div></a>
+
+		<div class="col-sm-12 col-md-4 col-lg-4" >
 			<div class="row">
+				<a ng-href="#/{{content.link}}" ng-repeat="content in grp_two_small">
 				<div class="col-sm-6 col-md-12 col-lg-12">
-					<div class="box box-4col box-5" style="background-image: url(/images/data-driven.jpg);">
+					<div class="box box-4col box-5"
+					     style="background-image: url({{content.image.secure_url}});">
 						<div class="box-caption">
 							<div class="label label-text-2 black-text">IDEAS</div>
                                     <span class="title-2 white-text">
-                                        A Caribbean Open Data Public Service
+                                        {{content.title}}
                                     </span>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-md-12 col-lg-12">
-					<div class="box box-4col box-6" style="background-image: url(/images/agrihack.jpg);">
-						<div class="box-caption">
-							<div class="label label-text-2 black-text">IDEAS</div>
-                                    <span class="title-2 white-text">
-                                        A Caribbean Open Data Public Service
-                                    </span>
-						</div>
-					</div>
-				</div>
+				</div></a>
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-6 col-md-4 col-lg-4">
-			<div class="box-news box-news-item1">
-				<div class="box box-4col box-news-photo"></div>
+	<div class="row" ng-if="news.length > 0">
+		<div class="col-sm-12 col-md-4 col-lg-4" ng-repeat="item in news">
+			<div class="box-news box-event-item" >
+				<div class="box box-4col box-news-photo"
+				     ng-style="{'background-image':'url({{item.image.secure_url}})'}"></div>
 				<div class="box box-4col box-news-text">
-					<p>20.08.15</p>
-					<p>On Tuesday August 25th, Matthew McNaughton will be presenting on the "Principles for Digital Development" at the Caribbean Technology Innovation and Digital Economy (TIDE) Conference in Port of Spain, Trinidad & Tobago. The Principles are "living" guidelines on the best practices for creating technology-enabled programmes. You can see Matthew's presentation here and learn about the Principles on its website. </p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-4 col-lg-4">
-			<div class="box-news box-news-item2">
-				<div class="box box-4col box-news-photo"></div>
-				<div class="box box-4col box-news-text">
-					<p>27.10.15</p>
-					<p>At the Open Government Partnership Summit in Mexico City from October 27-29 Matthew McNaughton will be presenting on how SlashRoots have been making the recently adopted Sustainable Development Goals real at the local level. Matthew will be participating in the Code For All panel on "Harnessing the Capacity of the Community for Sustainable Open Government". Follow OGP discussion Twitter using #OGP15.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12 col-md-4 col-lg-4">
-			<div class="box-news box-event-item">
-				<div class="box box-4col box-news-photo"></div>
-				<div class="box box-4col box-news-text">
-					<p>28.10.15</p>
-					<p>The next workshop in the StartupJAM entrepreneurial series will take place on Wednesday, October 28, 2015 under the theme "How to build an airtight product strategy" The guest speaker for the workshop is Ben Cole, Product Manager at Kickstarter. Ben Cole is a leader who cares deeply about the social impact of technology. He is currently a product manager at Kickstarter, advisor to the Clinton campaign, and product management instructor at General Assembly.</p>
+					<p>{{item.publishedDate | date: 'dd.MM.yy'}}</p>
+					<div ng-bind-html="item.content.brief | sanitize"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="container-fluid">
-	<div class="row">
-		<div class="no-padding col-sm-12 col-md-12 col-lg-12">
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6 col-md-4 col-lg-4">
-							<div id="logo-white"></div>
-						</div>
-						<div class="col-sm-6 col-md-4 col-lg-4 col-sm-offset-0 col-md-offset-4 col-lg-offset-4">
-							<div id="icons">
-								<i class="demo-icon icon-facebook-rect">&#xe801;</i>
-								<i class="demo-icon icon-twitter-bird">&#xe803;</i>
-								<i class="demo-icon icon-github">&#xe805;</i>
-								<!-- <i class="demo-icon icon-instagram">&#xe807;</i> -->
-								<i class="demo-icon icon-travis-ci-icon">&#xe808;</i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="row" ng-include="'app/modules/partials/footer.html'"></div>
 </div>

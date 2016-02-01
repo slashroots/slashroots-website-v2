@@ -1,27 +1,26 @@
 <header id="header-carousel" class="carousel slide">
 	<uib-carousel interval="interval" no-wrap="noWrapSlides">
-		<uib-slide ng-repeat="slide in slides" active="slide.active">
-			<a href="{{slide.link}}">
-				<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding"
-				ng-style="{'background-image': 'url({{ slide.image }})'}">
-					<div class="box-caption">
-						<!--------------------Hero-------------------->
-						<div class="row on-grid-row">
-							<div class="col-sm-12 col-md-12 col-lg-12">
-								<div class="label label-text-2 black-text">
-									IDEAS
-								</div>
-								<span class="title-1 white-text">
-									{{slide.title}}
-								</span>
-								<span class="sub-title-1 white-text">
-									{{slide.subtitle}}
-								</span>
+		<uib-slide ng-repeat="slide in slides">
+			<a ng-href="#/{{slide.link}}">
+			<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url({{slide.image.secure_url}});">
+				<div class="box-caption">
+					<!--------------------Hero-------------------->
+					<div class="container"><div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div class="label label-text-2 black-text">
+								TESTING
 							</div>
+                                    <span class="title-1 white-text">
+                                        {{slide.title}}
+                                    </span>
+                                    <span class="sub-title-1 white-text">
+                                        Subtitle
+                                    </span>
 						</div>
-						<!--------------------Hero-------------------->
-					</div>
+					</div></div>
+					<!--------------------Hero-------------------->
 				</div>
+			</div>
 			</a>
 		</uib-slide>
 	</uib-carousel>

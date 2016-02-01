@@ -1,46 +1,91 @@
 /**
  * Created by tremaine on 1/15/16.
  */
-(function(){
+//(function(){
     'use strict';
     angular
         .module('home')
-        .controller('Home', Home);
-
-    Home.$inject = ['$scope', 'dataService'];
+        .controller('Home', Home)
     /**
-     *
+     * Constant provider used to create constants
+     * for the dataservice module.
+     */
+        .constant('CAROUSEL',{
+           interval : 5000,
+            noWrapSlides : false
+        });
+    /**
+     * Module dependency injection
+     * @type {string[]}
+     */
+    Home.$inject = ['$scope', 'dataService', 'CAROUSEL'];
+    /**
+     * Controller handling data interaction
+     * between the view and the model.
+     * @param $scope
+     * @param dataService
+     * @param CAROUSEL
      * @constructor
      */
-    function Home($scope, dataService){
-        $scope.interval = 5000;
-        $scope.noWrapSlides = false;
+    function Home($scope, dataService, CAROUSEL){
+        $scope.interval = CAROUSEL.interval;
+        $scope.noWrapSlides = CAROUSEL.noWrapSlides;
+        $scope.grp_one_small = {};
+        $scope.grp_two_small = {};
+        $scope.grp_one_lg = {};
+        $scope.grp_two_lg = {};
 
         activate();
-
+        /**
+         * Used to load controller startup logic
+         * and other services.
+         */
         function activate(){
-            dataService.getPosts().then(function(data){
-                console.log(data);
+            /**
+             * Retrieve all published posts which should be
+             * displayed on the home page.
+             */
+            dataService
+                .getHomePageContent()
+                .query({state: 'published', homePage: 'yes', sortResultBy: 'positionOnPage'},
+                    function(content){
+                        var grp_one_lg = sliceContentList(content, 2, 3),
+                            grp_two_lg = sliceContentList(content, 5, 6);
+                        $scope.grp_one_small = sliceContentList(content, 0, 2);
+                        $scope.grp_two_small = sliceContentList(content, 4, 6);
+                        $scope.grp_one_lg = grp_one_lg[0];
+                        $scope.grp_tw_lg = grp_two_lg[0];
+            }, function(error){
+
+                });
+            /**
+             * Retrieve all resources (pages and posts) which are flagged
+             * for display within the carousel.
+             */
+            dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){
+                $scope.slides = carousel_items;
+            }, function(error){
+                $scope.slides = {};
+            });
+            /**
+             * Retrieve all published news items.
+             */
+            dataService.getNewsItems().query({state: 'published'}, function(news){
+                $scope.news = news;
+            }, function(error){
+                $scope.news = {};
             });
         }
-
-        $scope.slides = [{
-            "link": "www.yahoo.com",
-            "title": "A Caribbean Open Data Public Service",
-            "subtitle": "Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets",
-            "image" : "images/caribbean_tide_hero.jpg"
-        },
-            {
-                "link": "www.yahoo.com",
-                "title": "Second",
-                "subtitle": "Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets",
-                "image" : "images/do-not-thief.jpg"
-            },
-            {
-                "link": "www.yahoo.com",
-                "title": "Third",
-                "subtitle": "Access to information is a key pillar of growing a better agriculture sector. Our tools are breaking down data silos government and helping farmers get better access to information and markets",
-                "image" : "images/post_its-large.jpg"
-            }];
+        /**
+         * Returns a shallow copy of a portion
+         * of an array.
+         * @param content
+         * @param start
+         * @param end
+         * @returns {*|Array.<T>}
+         */
+        function sliceContentList(content, start, end){
+            return content.slice(start, end)
+        }
     }
-})();
+//})();
