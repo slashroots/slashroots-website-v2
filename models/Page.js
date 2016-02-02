@@ -26,7 +26,7 @@
             extended: { type: Types.Html, wysiwyg: true, height: 400 }
         },
         homePage : { type: Types.Select, options: 'yes, no'},
-        carousel: {type: Types.Select, options: 'yes, no', dependsOn: {homePage: 'yes'}},
+        carousel: {type: Types.Select, options: 'yes, no'},
         positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
         link: {type: String, noedit: true}
     });

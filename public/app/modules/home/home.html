@@ -25,18 +25,19 @@
 				</a>
 			</div>
 		</div>
-		<a ng-href="#/{{grp_one_lg.link}}" ng-if="grp_one_lg">
-			<div class="col-sm-6 col-md-8 col-lg-8">
-				<div class="box box-4col box-2"
-				     style="background-image: url({{grp_one_lg.image.secure_url}});">
-					<div class="box-caption">
-						<div class="label label-text-2 black-text">IDEAS</div>
-	                            <span class="title-2 white-text">
-	                                {{grp_one_lg.title}}
-	                            </span>
-					</div>
+
+		<div class="col-sm-6 col-md-8 col-lg-8">
+			<a ng-href="#/{{grp_one_lg.link}}" ng-if="grp_one_lg">
+			<div class="box box-8col box-3" style="background-image: url({{grp_one_lg.image.secure_url}});">
+				<div class="box-caption">
+					<div class="label label-text-2 black-text">IDEAS</div>
+                            <span class="title-2 white-text">
+                               {{grp_one_lg.title}}
+                            </span>
 				</div>
-			</div></a>
+			</div>
+			</a>
+		</div>
 		<div class="col-sm-6 hidden-md hidden-lg">
 			<div class="box box-4col box-4">4</div>
 		</div>
