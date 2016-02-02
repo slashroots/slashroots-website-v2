@@ -49,7 +49,6 @@
                 .getHomePageContent()
                 .query({state: 'published', homePage: 'yes', sortResultBy: 'positionOnPage'},
                     function(content){
-                        console.log(content);
                         var grp_one_lg = sliceContentList(content, 2, 3),
                             grp_two_lg = sliceContentList(content, 5, 6);
                         $scope.grp_one_small = sliceContentList(content, 0, 2);
@@ -62,6 +61,7 @@
              * for display within the carousel.
              */
             dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){
+                console.log(carousel_items);
                 $scope.slides = carousel_items;
             }, function(error){
                 $scope.slides = {};

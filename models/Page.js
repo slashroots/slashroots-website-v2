@@ -18,6 +18,7 @@
 
     Page.add({
         title: { type: String, required: true },
+        subTitle: { type: String, required: true, initial: true},
         state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
         publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
         image: { type: Types.CloudinaryImage },
@@ -28,7 +29,7 @@
         homePage : { type: Types.Select, options: 'yes, no'},
         carousel: {type: Types.Select, options: 'yes, no'},
         positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
-        link: {type: String, noedit: true}
+        link: {type: String}
     });
 
     Page.schema.virtual('content.full').get(function() {
