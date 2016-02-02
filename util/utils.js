@@ -77,7 +77,11 @@
      * @param src
      */
     exports.mergeObjects = function(dest, src){
-        return _.extend(dest, src);
+        var i = src.length;
+        while(i--){
+            dest.push(src[i]);
+        }
+        return dest;
     };
     /**
      * Sorts a list by a given criteria
@@ -88,4 +92,6 @@
     exports.sortObject = function(list,criteria){
         return _.sortBy(list, criteria);
     };
+
+    //exports.
 })();

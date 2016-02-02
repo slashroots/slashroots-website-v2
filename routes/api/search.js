@@ -26,14 +26,14 @@
                    if(err || !pages){
                        utils.handleDBError(err, res);
                    }else{
-                       var result = {};
+                       var result = [], completedResult = {};
                        result = utils.mergeObjects(result, posts);
                        result = utils.mergeObjects(result, pages);
-                       if(req.query.sortResultBy){
-                           if(req.query.sortResultBy === 'positionOnPage'){
-                               result = utils.sortObject(result, req.query.sortResultBy);
-                           }
-                       }
+                       //if(req.query.sortResultBy){
+                       //    if(req.query.sortResultBy === 'positionOnPage'){
+                       //       completedRequest = utils.sortObject(result, req.query.sortResultBy);
+                       //    }
+                       //}
                        res.json(result);
                    }
                });

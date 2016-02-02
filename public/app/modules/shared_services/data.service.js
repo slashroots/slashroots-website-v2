@@ -66,7 +66,7 @@
          */
         function getCarouselItems(){
             return $resource(ROUTES.baseUrl + 'search',{},{
-                query: {method: 'GET'}
+                query: {method: 'GET', isArray: true}
             });
         }
         /**
