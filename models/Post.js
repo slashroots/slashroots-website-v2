@@ -23,7 +23,7 @@ Post.add({
 	},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 	homePage : { type: Types.Select, options: 'yes, no'},
-	carousel: {type: Types.Select, options: 'yes, no', dependsOn: {homePage: 'yes'}},
+	carousel: {type: Types.Select, options: 'yes, no'},
 	positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
 	link: {type: String, noedit: true}
 });
@@ -47,5 +47,5 @@ Post.schema.pre('save', function(next){
 	next();
 });
 
-Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
+Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20% positionOnPage|20%';
 Post.register();
