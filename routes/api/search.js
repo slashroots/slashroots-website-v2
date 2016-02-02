@@ -12,6 +12,7 @@
      * posts and pages.
      * @param req
      * @param res
+     * TODO - Implement handleResourceError
      */
     exports.index = function(req, res){
         var query = {};
@@ -26,14 +27,19 @@
                    if(err || !pages){
                        utils.handleDBError(err, res);
                    }else{
-                       var result = [], completedResult = {};
+                       var result = [];
                        result = utils.mergeObjects(result, posts);
                        result = utils.mergeObjects(result, pages);
-                       //if(req.query.sortResultBy){
-                       //    if(req.query.sortResultBy === 'positionOnPage'){
-                       //       completedRequest = utils.sortObject(result, req.query.sortResultBy);
-                       //    }
-                       //}
+                       /**
+                        * TODO - Define the below into a function
+                        */
+                        if(req.query.sortResultBy){
+                           if(req.query.sortResultBy === 'positionOnPage'){
+                              result = utils.sortObject(result, req.query.sortResultBy);
+                           }else if(req.query.sortResultBy === 'positionInCarousel'){
+                               result = utils.sortObject(result, req.query.sortResultBy);
+                           }
+                       }
                        res.json(result);
                    }
                });

@@ -1,7 +1,7 @@
 /**
  * Created by tremaine on 1/15/16.
  */
-//(function(){
+(function(){
     'use strict';
     angular
         .module('home')
@@ -46,13 +46,14 @@
                 .query({state: 'published', homePage: 'yes', sortResultBy: 'positionOnPage'},
                     function(content){
                         $scope.page_content = content;
-            });
+            }, function(error){
+                    $scope.page_content = {};
+                });
             /**
              * Retrieve all resources (pages and posts) which are flagged
              * for display within the carousel.
              */
             dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){
-                console.log(carousel_items.length);
                 $scope.slides = carousel_items;
             }, function(error){
                 $scope.slides = {};
@@ -66,16 +67,5 @@
                 $scope.news = {};
             });
         }
-        /**
-         * Returns a shallow copy of a portion
-         * of an array.
-         * @param content
-         * @param start
-         * @param end
-         * @returns {*|Array.<T>}
-         */
-        function sliceContentList(content, start, end){
-            return content.slice(start, end)
-        }
     }
-//})();
+})();

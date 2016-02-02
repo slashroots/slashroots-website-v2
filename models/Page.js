@@ -18,7 +18,7 @@
 
     Page.add({
         title: { type: String, required: true },
-        subTitle: { type: String, required: true, initial: true},
+        subTitle: { type: String},
         state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
         publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
         image: { type: Types.CloudinaryImage },
@@ -26,9 +26,10 @@
             brief: { type: Types.Html, wysiwyg: true, height: 150 },
             extended: { type: Types.Html, wysiwyg: true, height: 400 }
         },
-        homePage : { type: Types.Select, options: 'yes, no'},
-        carousel: {type: Types.Select, options: 'yes, no'},
+        homePage : { type: Types.Select, options: 'yes, no', default: 'no'},
         positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
+        carousel: {type: Types.Select, options: 'yes, no', default: 'no'},
+        positionInCarousel: {type: Types.Select, options: '1,2,3,4', dependsOn: {carousel: 'yes'}},
         link: {type: String}
     });
 
@@ -47,10 +48,12 @@
     };
 
     Page.schema.pre('save', function(next){
-        this.link = this.slug;
+        if(this.link === " "){
+            this.link = this.slug;
+        }
         next();
     });
 
-    Page.defaultColumns = 'title, state|20%, publishedDate|20%';
+    Page.defaultColumns = 'title, state, author,  carousel, positioniInCarousel, homePage, positionOnPage';
     Page.register();
 })();

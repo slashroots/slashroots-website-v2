@@ -13,7 +13,7 @@ var Post = new keystone.List('Post', {
 
 Post.add({
 	title: { type: String, required: true },
-	subTitle: { type: String, required: true, initial: true},
+	subTitle: { type: String},
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
@@ -23,9 +23,10 @@ Post.add({
 		extended: { type: Types.Html, wysiwyg: true, height: 400 }
 	},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
-	homePage : { type: Types.Select, options: 'yes, no'},
-	carousel: {type: Types.Select, options: 'yes, no'},
+	homePage : { type: Types.Select, options: 'yes, no', default: 'no'},
 	positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
+	carousel: {type: Types.Select, options: 'yes, no', default: 'no'},
+	positionInCarousel: {type: Types.Select, options: '1,2,3,4', dependsOn: {carousel: 'yes'}},
 	link: {type: String, noedit: true}
 });
 
@@ -44,9 +45,11 @@ Post.schema.statics.search = function(query, callback){
 };
 
 Post.schema.pre('save', function(next){
-	this.link = 'posts/' + this.slug;
+	if(this.link === " "){
+		this.link = 'posts/' + this.slug;
+	}
 	next();
 });
 
-Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20% positionOnPage|20%';
+Post.defaultColumns = 'title, state, author,  carousel, positioniInCarousel, homePage, positionOnPage';
 Post.register();
