@@ -49,15 +49,14 @@
                 .getHomePageContent()
                 .query({state: 'published', homePage: 'yes', sortResultBy: 'positionOnPage'},
                     function(content){
+                        console.log(content);
                         var grp_one_lg = sliceContentList(content, 2, 3),
                             grp_two_lg = sliceContentList(content, 5, 6);
                         $scope.grp_one_small = sliceContentList(content, 0, 2);
                         $scope.grp_two_small = sliceContentList(content, 4, 6);
                         $scope.grp_one_lg = grp_one_lg[0];
                         $scope.grp_tw_lg = grp_two_lg[0];
-            }, function(error){
-
-                });
+            });
             /**
              * Retrieve all resources (pages and posts) which are flagged
              * for display within the carousel.
