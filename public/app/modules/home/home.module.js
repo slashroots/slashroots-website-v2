@@ -4,7 +4,9 @@
 (function(){
     'use strict';
     angular
-        .module('home',[])
+        .module('home',[
+            'ngAnimate'
+        ])
         .config(config);
     /**
      * Config function defining module
