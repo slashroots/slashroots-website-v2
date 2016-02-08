@@ -18,7 +18,7 @@
 		}
 		Post.model
 			.find(query)
-			.populate('author')
+			.populate('author', 'name image email')
 			.exec(function(err, posts){
 				if(err || !posts){
 					utils.handleDBError(err, res)
@@ -36,8 +36,7 @@
 		Post
 			.model
 			.findOne({slug : req.params.slug})
-			.populate('author')
-			.select('-password')
+			.populate('author', 'name image email')
 			.exec(function(err, post){
 				if(err || !post){
 					utils.handleDBError(err, res);
@@ -46,5 +45,4 @@
 				}
 			});
 	};
-
 })();
