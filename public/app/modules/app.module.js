@@ -18,8 +18,26 @@
             'post',
             'page',
             'shared-services'
-        ]).config(config);
-
+        ]).config(config)
+        .run(googleAnalyticsTracking);
+    /**
+     * Tracks each page view through
+     * google analytics.
+     * @param $rootScope
+     * @param $location
+     * @param $window
+     */
+    function googleAnalyticsTracking($rootScope, $location, $window){
+        $rootScope.$on('$routeChangeStart', function(event, current){
+            var pageName = $location.path();
+            $window.ga('send', 'pageview', {'page': pageName});
+        });
+    }
+    /**
+     * Registers an function to handle
+     * HTTP events.
+     * @param $httpProvider
+     */
     function config($httpProvider){
         $httpProvider.interceptors.push('HTTPInterceptor');
     }
