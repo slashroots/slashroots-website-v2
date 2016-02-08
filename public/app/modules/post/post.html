@@ -15,7 +15,7 @@
 						IDEAS
 					</div>
 					<div class="title-1">{{post.title}}</div>
-					<div class="sub-title-1">Post Sub Title</div>
+					<div class="sub-title-1">{{post.subTitle}}</div>
 					<div class="body-copy" ng-bind-html=" post.content.extended | sanitize ">
 					</div>
 				</div>
@@ -35,4 +35,7 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div class="container-fluid">
+	<div class="row" ng-include="'app/modules/partials/footer.html'"></div>
 </div>

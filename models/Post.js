@@ -14,9 +14,7 @@ var Post = new keystone.List('Post', {
 Post.add({
 	title: { type: String, required: true },
 	subTitle: { type: String},
-	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
-	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	image: { type: Types.CloudinaryImage },
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
@@ -27,7 +25,10 @@ Post.add({
 	positionOnPage: {type: Types.Select, options: '1,2,3,4,5,6', dependsOn: {homePage: 'yes'}},
 	carousel: {type: Types.Select, options: 'yes, no', default: 'no'},
 	positionInCarousel: {type: Types.Select, options: '1,2,3,4', dependsOn: {carousel: 'yes'}},
-	link: {type: String, noedit: true}
+	externalLink: {type: Types.Select, options: 'yes, no', default: 'no'},
+	link: {type: String, dependsOn: {externalLink: 'yes'}},
+	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } }
 });
 
 Post.schema.virtual('content.full').get(function() {
@@ -45,7 +46,7 @@ Post.schema.statics.search = function(query, callback){
 };
 
 Post.schema.pre('save', function(next){
-	if(this.link === " "){
+	if(this.externalLink === 'no'){
 		this.link = 'posts/' + this.slug;
 	}
 	next();
