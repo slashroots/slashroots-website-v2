@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- stable
+- '0.12'
+notifications: 
+deploy:
+  api_key:
+    secure: R+d1u0FDaFXIEZ0vetVjGbuGN+ls6yoAKKkX2f9bMW7T2/k7UDbSKt+QRY7+w/exrubTlQtZT5u2Jfqn0cEA9doHRPVR+FvbHSFwbnzyn8y6sJAGE4WjbuzoL9qHM/3dG/c26wxsdRRmsdW3oZ/RzxmWz233h/7NBqOfz4dYc8uoKnvdvqfYbr1j+Pbvd8JYpcZ3/Ku0JtRiSeZJ3X2olm6X7NI0py55U87GbtHpjgY4UyW6xEPwqlc4MfWXjikP22r8Vd5MDtZPMQc4DAY8xLBw/GBsyHxzmaFNbkpcDOsx5FCgokx7kwl2tOl+1AV8P9tkvYB/AL++v08nxDNcSF4Hz8162jLffo/PCPq03oEAqhtzjcmPMpZzsQdxeojRjhcNtDSY4HnwF7eAPXtAB2Gw39gP84/Q+8EWd2qEPVaBoSxiAhg8jd6Ur5CMQX4RoPP4SOte5+UHsvNdD2eZLBU8tdt7rF8p0AWR8u21RgfJdpGAuNRuhUKmhux5fvZN3uR4yHLKALO8iVNhbox35uCMPJN6H5UQX1hs26JPFEq+HzxiRHaOVMcGJTx6XGuUZVQuV47jMaeTjoMni6Z5btkUVLm1iHAugwPZgisk4rS58eMo7ru07z1dEORxi3tKzbZqIV/uMmYwLzPYl3p88/sZIlQUsqnlbbQpMyfk6jE=
+  provider: heroku
+  strategy: api
+  on:
+    all_branches: false
+  app:
+    master: slashroots-website-staging
+    production: slashroots-website-prod
