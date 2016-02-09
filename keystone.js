@@ -41,13 +41,12 @@ keystone.init({
 	'wysiwyg cloudinary images' : true,
 	'wysiwyg menubar' : true,
 	'wysiwyg importcss' : '/keystone/styles/editor-css.css',
-	'wysiwyg additional plugins': 'wordcount'
 	//'wysiwyg additional buttons': 'preview',
-	//'wysiwyg additional plugins': 'example, table, advlist, anchor,'
-	//+ ' autolink, autosave, bbcode, charmap, contextmenu, '
-	//+ ' directionality, emoticons, fullpage, hr, media, pagebreak,'
-	//+ ' paste, preview, print, searchreplace, textcolor,'
-	//+ ' visualblocks, visualchars, wordcount'
+	'wysiwyg additional plugins': 'example, table, advlist, anchor,'
+	+ ' autolink, autosave, bbcode, charmap, contextmenu, '
+	+ ' directionality, emoticons, hr, media, pagebreak,'
+	+ ' paste, print, searchreplace, textcolor,'
+	+ ' visualblocks, visualchars, wordcount'
 });
 
 // Load your project's Models

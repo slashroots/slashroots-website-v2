@@ -2,8 +2,35 @@
 	<!-- NAV BAR -->
 	<div class="row" ng-include="'app/modules/partials/navbar.html'"></div>
 	<!-- CAROUSEL -->
-	<div class="row" ng-include="'app/modules/partials/carousel.html'">
-
+	<div class="row">
+		<header id="header-carousel" class="carousel slide">
+			<uib-carousel interval="interval" no-wrap="noWrapSlides">
+				<uib-slide ng-repeat="slide in slides">
+					<a href ng-click="goTo(slide.link, slide.externalLink)">
+						<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url({{slide.image.secure_url}});">
+							<div class="box-caption">
+								<!--------------------Hero-------------------->
+								<div class="container"><div class="row">
+									<div class="col-sm-12 col-md-12 col-lg-12">
+										<!--<div class="label label-text-2 black-text">-->
+										<!--TESTING-->
+										<!--</div>-->
+	                                    <span class="title-1 white-text">
+	                                        {{slide.title}}
+	                                    </span>
+	                                    <span class="sub-title-1 white-text">
+											{{slide.subTitle}}
+	                                    </span>
+									</div>
+								</div>
+								</div>
+								<!--------------------Hero-------------------->
+							</div>
+						</div>
+					</a>
+				</uib-slide>
+			</uib-carousel>
+		</header>
 	</div>
 </div>
 <div class="container">
@@ -11,7 +38,7 @@
 		<div class="col-sm-12 col-md-4 col-lg-4">
 			<div class="row">
 					<div class="col-sm-6 col-md-12 col-lg-12" ng-repeat="content in page_content | limitTo: 2 : 0">
-						<a ng-href="#/{{content.link}}">
+						<a href ng-click="goTo(content.link, content.externalLink)">
 							<div class="box box-4col box-1"
 							     style="background-image: url({{content.image.secure_url}});">
 								<div class="box-caption">

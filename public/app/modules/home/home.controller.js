@@ -18,7 +18,7 @@
      * Module dependency injection
      * @type {string[]}
      */
-    Home.$inject = ['$scope', 'dataService', 'CAROUSEL'];
+    Home.$inject = ['$scope', 'dataService', 'CAROUSEL', '$window', '$location'];
     /**
      * Controller handling data interaction
      * between the view and the model.
@@ -27,9 +27,10 @@
      * @param CAROUSEL
      * @constructor
      */
-    function Home($scope, dataService, CAROUSEL){
+    function Home($scope, dataService, CAROUSEL, $window, $location){
         $scope.interval = CAROUSEL.interval;
         $scope.noWrapSlides = CAROUSEL.noWrapSlides;
+        $scope.goTo = goTo;
 
         activate();
         /**
@@ -66,6 +67,19 @@
             }, function(error){
                 $scope.news = {};
             });
+        }
+        /**
+         * Handles internal and external links
+         * within the application.
+         * @param url
+         * @param isExternal
+         */
+        function goTo(url, isExternal){
+            if(isExternal === 'yes'){
+                $window.open(url, '_blank');
+            }else{
+                $location.path(url);
+            }
         }
     }
 })();
