@@ -54,7 +54,8 @@
              * Retrieve all resources (pages and posts) which are flagged
              * for display within the carousel.
              */
-            dataService.getCarouselItems().query({carousel: 'yes'}, function(carousel_items){
+            dataService.getCarouselItems()
+                .query({carousel: 'yes', sortResultBy: 'positionInCarousel'}, function(carousel_items){
                 $scope.slides = carousel_items;
             }, function(error){
                 $scope.slides = {};
