@@ -6,7 +6,7 @@
 		<header id="header-carousel" class="carousel slide">
 			<uib-carousel interval="interval" no-wrap="noWrapSlides">
 				<uib-slide ng-repeat="slide in slides">
-					<a href ng-click="goTo(slide.link, slide.externalLink)">
+					<a href="#/{{slide.link}}">
 						<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url({{slide.image.secure_url}});">
 							<div class="box-caption">
 								<!--------------------Hero-------------------->
@@ -59,7 +59,7 @@
 			     style="background-image: url({{content.image.secure_url}});">
 
 				<div class="box-caption">
-					<div class="label label-text-2 black-text">IDEAS</div>
+					<div class="label label-text-2 black-text">INITIATIVES</div>
                             <span class="title-2 white-text">
                               {{content.title}}
                             </span>
