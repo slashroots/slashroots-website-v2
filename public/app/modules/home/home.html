@@ -38,7 +38,7 @@
 		<div class="col-sm-12 col-md-4 col-lg-4">
 			<div class="row">
 					<div class="col-sm-6 col-md-12 col-lg-12" ng-repeat="content in page_content | limitTo: 2 : 0">
-						<a href ng-click="goTo(content.link, content.externalLink)">
+						<a ng-href="#/{{content.link}}">
 							<div class="box box-4col box-1"
 							     style="background-image: url({{content.image.secure_url}});">
 								<div class="box-caption">
@@ -56,12 +56,14 @@
 		<div class="col-sm-6 col-md-8 col-lg-8">
 			<div class="box box-8col box-3" ng-repeat="content in page_content | limitTo : 1 : 2"
 			     style="background-image: url({{content.image.secure_url}});">
+				<a href="#/{{content.link}}">
 				<div class="box-caption">
 					<div class="label label-text-2 black-text">IDEAS</div>
                             <span class="title-2 white-text">
                               {{content.title}}
                             </span>
 				</div>
+				</a>
 			</div>
 		</div>
 		<div class="col-sm-6 hidden-md hidden-lg" >
