@@ -18,6 +18,9 @@ exports = module.exports = function(app) {
 	app.get('/', routes.views.index);
 	//Custom api endpoints created for consumption by the front end.
 	app.get('/api/posts', keystone.middleware.api, routes.api.post.index);
+	app.get('/api/slides', keystone.middleware.api, routes.api.carousel.index);
+	app.get('/api/:c_id/slides', keystone.middleware.api, routes.api.carousel.byCarouselId);
+	app.get('/api/carousel/:name', keystone.middleware.api, routes.api.carousel.getCarouselByName);
 	app.get('/api/search', keystone.middleware.api, routes.api.search.index);
 	app.get('/api/news', keystone.middleware.api, routes.api.news.index);
 	app.get('/api/posts/:slug', keystone.middleware.api, routes.api.post.show);
