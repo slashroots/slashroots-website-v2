@@ -10,33 +10,33 @@
     margin-left: 0px;
 }
 .float-left {
-	float: left;
+    float: left;
 }
 .float-right {
-	float: right;
+    float: right;
 }
 .floar-none {
-	float: none;
+    float: none;
 }
 .on-grid-row {
-	margin-right:auto;
-	margin-left: auto;
+    margin-right:auto;
+    margin-left: auto;
 }
 
 @media (min-width: 768px) {
-  .on-grid-row {
-    width: 750px;
-  }
+    .on-grid-row {
+        width: 750px;
+    }
 }
 @media (min-width: 992px) {
-  .on-grid-row {
-    width: 970px;
-  }
+    .on-grid-row {
+        width: 970px;
+    }
 }
 @media (min-width: 1200px) {
-  .on-grid-row {
-    width: 1170px;
-  }
+    .on-grid-row {
+        width: 1170px;
+    }
 }
 
 .spacer-small {height: 20px; width: 100%;}
@@ -60,15 +60,15 @@
     }
 }
 @media (min-width:768px) and (max-width:991px) {
-    .box-3col { 
+    .box-3col {
         height: 345px;
     }
     .box-4col, .box-8col {
         height: 345px;
-    }  
+    }
 }
 @media (min-width:992px) and (max-width:1199px) {
-    .box-3col { 
+    .box-3col {
         height: 212.5px;
     }
     .box-4col {
@@ -82,13 +82,13 @@
     }
 }
 @media (min-width:1200px) {
-    .box-3col { 
+    .box-3col {
         height: 262.5px;
     }
     .box-4col {
         height: 360px;
-    }    
-        .box-8col {
+    }
+    .box-8col {
         height: 750px;
     }
 }
@@ -131,14 +131,14 @@
 @media (max-width: 767px) {
     .box-news-photo, .box-news-text {
         float: none;
-    }    
+    }
 }
 
 #hero {
     position: relative;
     width: 100%;
     min-height: 100vh;
-	margin-top: -60px;
+    margin-top: -60px;
     padding-bottom: 45%;
     background-size: cover;
 }
@@ -155,24 +155,24 @@
 /*------------------ Navbar ----------------*/
 
 #header-navbar {
-	height: 60px;
+    height: 60px;
 }
 
 #navbar-wrapper {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
 .navbar {
-    background: #ffffff; 
-    height: 70px; 
-    width:100%; 
+    background: #ffffff;
+    height: 70px;
+    width:100%;
 }
 
 @media(max-width:767px){
-	.navbar {
-		min-height: 60px;
-		height: auto;
-	}
+    .navbar {
+        min-height: 60px;
+        height: auto;
+    }
 }
 
 .navbar #logo {
@@ -185,7 +185,7 @@
 }
 
 .navbar #logo-mobile {
-	display: none;
+    display: none;
 }
 
 #logo-white {
@@ -202,76 +202,76 @@
 
 
 @media(max-width:767px){
-	#main-navbar {
-		background-color:#ffffff; 
-		margin-top:50px;
-		text-align:center;
-		margin-bottom: 0px;
-		padding: 0px;
-	}
-/*
-	#main-navbar .dropdown-menu {
-		text-align: right;
-	}
-*/
-	
-	.navbar #logo-mobile {
-		background-image: url(../images/logo.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		float: left;
-		height: 60px;
-		width: 200px;
-		margin-top: 0px;
-		display: block;
-	}	
-	
-	.navbar-toggle {
-		float:none; 
-		right:0px; 
-		position:absolute; 
-		border: 1px solid #ffffff;
-	}
+    #main-navbar {
+        background-color:#ffffff;
+        margin-top:50px;
+        text-align:center;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    /*
+        #main-navbar .dropdown-menu {
+            text-align: right;
+        }
+    */
 
-	.dropdown, #main-navbar > li {
-		border-bottom: 1px solid #cccccc;
-	}
-	
-	.dropdown-menu > li {
-		text-align: center;		
-	}
-	
-/*
-	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-		background-color: transparent;
-	}
-*/
-	
+    .navbar #logo-mobile {
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+        height: 60px;
+        width: 200px;
+        margin-top: 0px;
+        display: block;
+    }
+
+    .navbar-toggle {
+        float:none;
+        right:0px;
+        position:absolute;
+        border: 1px solid #ffffff;
+    }
+
+    .dropdown, #main-navbar > li {
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .dropdown-menu > li {
+        text-align: center;
+    }
+
+    /*
+        .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+            background-color: transparent;
+        }
+    */
+
 }
 
-/* make sidebar nav vertical */ 
+/* make sidebar nav vertical */
 @media (min-width: 768px) {
-  .sidebar-nav .navbar {
-    border-width: 0px;
-  }
-	.sidebar-nav .navbar .navbar-collapse {
-    padding: 0;
-    max-height: none;
-  }
-  .sidebar-nav .navbar ul {
-    float: none;
-  }
-  .sidebar-nav .navbar ul:not {
-    display: block;
-  }
-  .sidebar-nav .navbar li {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
+    .sidebar-nav .navbar {
+        border-width: 0px;
+    }
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+    }
+    .sidebar-nav .navbar ul:not {
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
 }
 
 
@@ -315,10 +315,10 @@
     font-weight: 700;
 }
 @media (max-width: 1199px) {
-	.title-2 {
-		font-size: 17px;
-		font-weight: 700;
-	}	
+    .title-2 {
+        font-size: 17px;
+        font-weight: 700;
+    }
 }
 .title-3 {
     font-size: 15px;
@@ -331,7 +331,7 @@
 
 .sub-title-1 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 100;
 }
 
 .label-text-1 {
@@ -351,7 +351,7 @@
 }
 
 .code {
-	font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 
@@ -360,9 +360,9 @@
 /*--------------------- Captions, labels and overlays ----------------*/
 .box-caption {
     background-color: rgba(0,0,0,0.4);
-    width:100%; 
-    position:absolute; 
-    bottom:0px;    
+    width:100%;
+    position:absolute;
+    bottom:0px;
 }
 
 #hero .box-caption {min-height: 30vh;}
@@ -371,9 +371,9 @@
 .team .box-3col .box-caption {min-height: 80px}
 
 .label {
-    background: #ffffff;    
+    background: #ffffff;
     margin-left: 15px;
-    padding: 5px; 
+    padding: 5px;
     float: left;
     clear: both;
     box-shadow: 1px 1px 1px #888888;
@@ -393,9 +393,9 @@
 }
 
 @media(max-width:767px){
-	#hero .title-1 {
-		margin-bottom: 50px
-	}
+    #hero .title-1 {
+        margin-bottom: 50px
+    }
 }
 
 .box .body-copy {
@@ -407,12 +407,12 @@
     margin-right: 15px;
 }
 .team .box .body-copy {
-	position:absolute; 
-	margin-bottom:15px; 
-	left:0px; 
-	bottom:0px;
+    position:absolute;
+    margin-bottom:15px;
+    left:0px;
+    bottom:0px;
 }
- 
+
 
 .box .title-2 {
     display: inline-block;
@@ -429,25 +429,53 @@
     clear: both;
     margin-top: 10px;
     margin-left: 15px;
-	margin-right: 15px;
+    margin-right: 15px;
     margin-bottom: 60px;
 }
 @media(max-height:767px){
-	#hero .sub-title-1 {
-		display:none;
-	}
+    #hero .sub-title-1 {
+        display:none;
+    }
 }
 
 .view-profile {
-    position: absolute; 
-    bottom:15px; 
+    position: absolute;
+    bottom:15px;
     left: 15px;
 }
 
 .article-body {margin-top:-25vh;}
 .article .title-1 {margin-bottom: 10px; margin-top: 15px; margin-left: 15px;  margin-right: 15px;}
 .article .sub-title-1 {margin-bottom: 20px; margin-left: 15px; margin-right: 15px;}
-.article .body-copy p {margin-bottom: 20px; margin-left: 15px; margin-right: 15px;}
+/*.article .body-copy p {margin-bottom: 20px; margin-left: 15px; margin-right: 15px;}*/
+.article .body-copy p {
+    width: 75%;
+    margin-left:0px !important;
+    margin-right:0px !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.article .title-2 {
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.article .inline-image {
+    width: 600px;
+    float: right;
+    margin: 0px 15px 15px 15px;
+}
+.article .inline-image img {
+    width:100%;
+}
+.article .pull-quote {
+    float:right; width:600px; padding-left:15px; margin-left: 15px; padding-bottom: 5px; padding-top: 5px; border-left: solid 5px #737373;
+}
+.article .pull-quote p {
+    font-family: 'Roboto Slab'; line-height: 110%; font-size:25px; padding:0px; margin:0px; width:100%; color:#737373; text-align: left
+}
+.article #author {
+    float:right;
+}
 
 /*------------------------------------------------------*/
 /*--------------------- Glyphicons ---------------------*/
@@ -457,14 +485,14 @@
     float: right;
 }
 @font-face {
-  font-family: 'fontello';
-  src: url('../font/fontello.eot?43780039');
-  src: url('../font/fontello.eot?43780039#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff?43780039') format('woff'),
-       url('../font/fontello.ttf?43780039') format('truetype'),
-       url('../font/fontello.svg?43780039#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?43780039');
+    src: url('../font/fontello.eot?43780039#iefix') format('embedded-opentype'),
+    url('../font/fontello.woff?43780039') format('woff'),
+    url('../font/fontello.ttf?43780039') format('truetype'),
+    url('../font/fontello.svg?43780039#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 .demo-icon
 {
@@ -481,28 +509,28 @@
     width: 1em;
     margin-right: 20px;
     text-align: center;
-  /* opacity: .8; */
+    /* opacity: .8; */
 
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
 
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
 
-  /* You can be more comfortable with increased icons size */
-  /* font-size: 120%; */
+    /* You can be more comfortable with increased icons size */
+    /* font-size: 120%; */
 
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 /*------------------- End Glyphicons -------------------*/
