@@ -50,16 +50,22 @@
             }, function(error){
                     $scope.page_content = {};
                 });
+
             /**
-             * Retrieve all resources (pages and posts) which are flagged
-             * for display within the carousel.
+             * Retrieve the carousel based on name
              */
-            dataService.getCarouselItems()
-                .query({carousel: 'yes', sortResultBy: 'positionInCarousel'}, function(carousel_items){
-                $scope.slides = carousel_items;
-            }, function(error){
-                $scope.slides = {};
-            });
+            dataService.getCarousel()
+                .show({name:'HomePage'}, function(carousel) {
+                    dataService.getSlides()
+                        .query({id: carousel._id}, function(slides) {
+                            $scope.slides = slides;
+                        }, function(error) {
+                            $scope.slides = {};
+                        })
+                }, function(error) {
+                    $scope.slides = {};
+                });
+
             /**
              * Retrieve all published news items.
              */
