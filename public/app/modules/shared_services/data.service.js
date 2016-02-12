@@ -34,7 +34,6 @@
         var service = {
             getPosts : getPosts,
             getPost: getPost,
-            getCarouselItems: getCarouselItems,
             getNewsItems: getNewsItems,
             getHomePageContent: getHomePageContent,
             getPage: getPage,
