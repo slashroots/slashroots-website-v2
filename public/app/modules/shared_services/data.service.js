@@ -34,10 +34,11 @@
         var service = {
             getPosts : getPosts,
             getPost: getPost,
-            getCarouselItems: getCarouselItems,
             getNewsItems: getNewsItems,
             getHomePageContent: getHomePageContent,
-            getPage: getPage
+            getPage: getPage,
+            getCarousel: getCarousel,
+            getSlides: getSlides
         };
 
         return service;
@@ -60,13 +61,21 @@
             });
         }
         /**
-         * Retrieves all pages and posts flagged for
-         * display within the carousel.
+         * Retrieves carousel based on name.
          * @returns {*}
          */
-        function getCarouselItems(){
-            return $resource(ROUTES.baseUrl + 'search',{},{
-                query: {method: 'GET', isArray: true}
+        function getCarousel(){
+            return $resource(ROUTES.baseUrl + 'carousel/:name',{},{
+                show: {method: 'GET', params: {name: '@name'} }
+            });
+        }
+        /**
+         * Retrieves all slides based on carousel id.
+         * @returns {*}
+         */
+        function getSlides(){
+            return $resource(ROUTES.baseUrl + ':id/slides',{},{
+                query: {method: 'GET', params: {id: '@id'}, isArray: true}
             });
         }
         /**
