@@ -6,36 +6,37 @@
 		<div id="hero" style="background-image: url({{post.image.secure_url}});"></div>
 	</div>
 </div>
+
 <div class="container">
 	<div class="row">
 		<div class="article-body white-background col-sm-12 col-md-12 col-lg-12">
 			<div class="row">
-				<div class="article no-padding col-sm-8 col-md-9 col-lg-9">
+				<div class="article no-padding col-sm-12 col-md-12 col-lg-12">
 					<div class="label label-text-2 black-text">
 						IDEAS
 					</div>
+					<div id="author" class="hidden-xs col-sm-4 col-md-3 col-lg-3">
+						<div class="box box-3col"
+						     style="background-image: url({{post.author.image.secure_url}});">
+							<div class="box-caption">
+								<div class="label label-text-2 dark-grey-text">Written By</div>
+									<span class="box-caption-headline title-2 white-text">
+										{{post.author.name.first}} {{post.author.name.last}}
+									</span>
+							</div>
+							<div class="view-profile">
+								<a class="white-text label-text-1" href="">View Profile</a>
+							</div>
+						</div>
+					</div>
 					<div class="title-1">{{post.title}}</div>
-					<div class="sub-title-1">{{post.subTitle}}</div>
-					<div class="body-copy" ng-bind-html=" post.content.extended | sanitize ">
-					</div>
-				</div>
-				<div class="hidden-xs col-sm-4 col-md-3 col-lg-3">
-					<div class="box box-3col" style="background-image: url({{post.author.image.secure_url}});">
-						<div class="box-caption">
-							<div class="label label-text-2 dark-grey-text">Written By</div>
-                                    <span class="box-caption-headline title-2 white-text">
-                                        {{post.author.name.first}} {{post.author.name.last}}
-                                    </span>
-						</div>
-						<div class="view-profile">
-							<a class="white-text label-text-1" href="">View Profile</a>
-						</div>
-					</div>
+					<div class="body-copy" ng-bind-html=" post.content.extended | sanitize "></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div class="container-fluid">
 	<div class="row" ng-include="'app/modules/partials/footer.html'"></div>
 </div>
