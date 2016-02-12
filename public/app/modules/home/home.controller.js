@@ -60,10 +60,10 @@
                         .query({id: carousel._id}, function(slides) {
                             $scope.slides = slides;
                         }, function(error) {
-
+                            $scope.slides = {};
                         })
                 }, function(error) {
-                    //TODO: Need to tie up these lose ends
+                    $scope.slides = {};
                 });
 
             /**
