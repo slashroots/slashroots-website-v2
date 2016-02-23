@@ -35,6 +35,7 @@
     exports.byCarouselId = function(req, res) {
         Slide.model.find()
             .populate('carousel')
+			.sort('position')
             .exec(function(err, slides) {
                 if(err || !slides){
                     utils.handleDBError(err, res)
