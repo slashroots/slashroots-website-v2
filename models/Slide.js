@@ -21,10 +21,11 @@
         subText: { type: String},
         image: { type: Types.CloudinaryImage },
         link: { type: String},
+		position: {type: Number},
         carousel: { type: Types.Relationship, ref: 'Carousel', many: true }
     });
 
 
-    Slide.defaultColumns = 'carousel, title, link';
+    Slide.defaultColumns = 'carousel, title, link, position';
     Slide.register();
 })();
