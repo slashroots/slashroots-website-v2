@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "async": "^2.2.0",
+    "bower": "^1.8.0",
     "cloudinary": "^1.2.4",
     "dotenv": "^1.1.0",
     "express-handlebars": "^1.1.0",
@@ -18,7 +19,8 @@
     "npm": "4.5.0"
   },
   "scripts": {
-    "start": "node keystone.js"
+    "start": "node keystone.js",
+    "postinstall": "bower install"
   },
   "main": "keystone.js"
 }

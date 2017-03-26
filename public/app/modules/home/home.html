@@ -2,33 +2,31 @@
 	<!-- NAV BAR -->
 	<div class="row" ng-include="'app/modules/partials/navbar.html'"></div>
 	<!-- CAROUSEL -->
+
 	<div class="row">
 		<header id="header-carousel" class="carousel slide">
-			<uib-carousel interval="interval" no-wrap="noWrapSlides">
-				<uib-slide ng-repeat="slide in slides">
+			<div uib-carousel active="active" interval="interval" no-wrap="noWrapSlides">
+				<div uib-slide ng-repeat="slide in slides track by slide.position" index="slide.position">
 					<a href="{{slide.link}}">
 						<div id="hero" class="col-sm-12 col-md-12 col-lg-12 no-padding" style="background-image: url({{slide.image.secure_url}});">
 							<div class="box-caption">
 								<!--------------------Hero-------------------->
 								<div class="row on-grid-row">
 									<div class="col-sm-12 col-md-12 col-lg-12">
-										<!--<div class="label label-text-2 black-text">-->
-										<!--TESTING-->
-										<!--</div>-->
-	                                    <span class="title-1 white-text">
-	                                        {{slide.title}}
-	                                    </span>
-	                                    <span class="sub-title-1 white-text">
+										<span class="title-1 white-text">
+											{{slide.title}}
+										</span>
+										<span class="sub-title-1 white-text">
 											{{slide.subText}}
-	                                    </span>
+										</span>
 									</div>
 								</div>
 								<!--------------------Hero-------------------->
 							</div>
 						</div>
 					</a>
-				</uib-slide>
-			</uib-carousel>
+				</div>
+			</div>
 		</header>
 	</div>
 </div>
